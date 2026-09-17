@@ -4,47 +4,151 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <meta name="theme-color" content="#082745" />
-  <meta name="description" content="Portal da Escola Municipal Professor José Antonio Flygare Telles – CAIC, Castro/PR." />
+  <meta name="description" content="Portal oficial do CAIC — Escola Municipal Professor José Antonio Flygare Telles, Castro/PR. Avisos, notícias, horários, calendário e localização." />
+  <meta name="robots" content="index,follow" />
+  <link rel="canonical" href="https://caic.com.br/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:locale" content="pt_BR" />
+  <meta property="og:title" content="CAIC | Escola Municipal Professor José Antonio Flygare Telles" />
+  <meta property="og:description" content="Avisos, notícias, horários e calendário do CAIC de Castro/PR." />
+  <meta property="og:url" content="https://caic.com.br/" />
+  <meta property="og:image" content="https://caic.com.br/assets/caic-aereo.jpg" />
   <title>CAIC | Escola Municipal Professor José Antonio Flygare Telles</title>
   <style>
     :root{
       --navy:#082745; --navy-2:#0d3a61; --blue:#176aa4; --sky:#eaf5fb;
-      --yellow:#ffc928; --orange:#ff8b15; --ink:#122033; --muted:#607083;
-      --paper:#fff; --line:#dfe7ee; --green:#32a65a; --shadow:0 18px 50px rgba(8,39,69,.13);
-      --radius:22px; --max:1180px;
+      --yellow:#ffc928; --orange:#ff8b15; --pink:#e81579; --ink:#122033;
+      --muted:#607083; --paper:#fff; --line:#dfe7ee; --green:#32a65a;
+      --red:#c43a46; --shadow:0 18px 50px rgba(8,39,69,.13); --radius:22px; --max:1180px;
     }
-    *{box-sizing:border-box} html{scroll-behavior:smooth} body{margin:0;font-family:Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;color:var(--ink);background:#f6f9fc;line-height:1.55}
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth;scroll-padding-top:100px}
+    body{margin:0;font-family:Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;color:var(--ink);background:#f6f9fc;line-height:1.55}
+    body.modal-open{overflow:hidden}
     a{color:inherit;text-decoration:none} img{max-width:100%;display:block}
+    button{font:inherit}
     .container{width:min(var(--max),calc(100% - 36px));margin:auto}
-    .topbar{background:#061f37;color:#dce8f2;font-size:.84rem}.topbar .container{min-height:38px;display:flex;align-items:center;justify-content:space-between;gap:16px}.topbar a{font-weight:700;color:white}
-    header{position:sticky;top:0;z-index:30;background:rgba(255,255,255,.94);backdrop-filter:blur(14px);border-bottom:1px solid rgba(8,39,69,.08)}
-    nav{height:82px;display:flex;align-items:center;justify-content:space-between;gap:26px}.brand{display:flex;align-items:center;gap:15px;min-width:0}.brand img{width:88px;height:64px;object-fit:contain}.brand-copy{line-height:1.15}.brand-copy strong{display:block;color:var(--navy);font-size:1.02rem;letter-spacing:.01em}.brand-copy span{display:block;color:var(--muted);font-size:.78rem;margin-top:4px}
-    .navlinks{display:flex;gap:4px;align-items:center}.navlinks a{padding:11px 12px;border-radius:12px;font-weight:720;color:#294158;font-size:.92rem}.navlinks a:hover{background:#eef5fa;color:var(--blue)}.navlinks .panel-btn{background:var(--navy);color:white;margin-left:5px}.navlinks .panel-btn:hover{background:var(--blue);color:white}
-    .menu{display:none;border:0;background:#edf4f8;color:var(--navy);font-size:1.4rem;border-radius:12px;width:44px;height:44px}
-    .hero{min-height:650px;position:relative;display:grid;align-items:end;background-image:linear-gradient(90deg,rgba(4,25,44,.88) 0%,rgba(4,25,44,.66) 42%,rgba(4,25,44,.17) 78%),linear-gradient(0deg,rgba(4,25,44,.65),transparent 42%),url('assets/caic-aereo.jpg');background-size:cover;background-position:center 52%;color:white}
-    .hero-inner{padding:94px 0 78px;max-width:790px}.eyebrow{display:inline-flex;align-items:center;gap:9px;background:rgba(255,255,255,.13);border:1px solid rgba(255,255,255,.24);padding:8px 13px;border-radius:999px;font-weight:760;font-size:.84rem;backdrop-filter:blur(8px)}.eyebrow i{width:8px;height:8px;border-radius:50%;background:var(--yellow)}
-    h1{font-size:clamp(2.5rem,5vw,5.1rem);line-height:.98;margin:18px 0 18px;letter-spacing:-.055em;max-width:850px}.hero p{font-size:clamp(1rem,1.8vw,1.22rem);max-width:670px;color:#eef7fd;margin:0 0 28px}.cta{display:flex;gap:12px;flex-wrap:wrap}.btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;padding:13px 17px;border-radius:14px;font-weight:800;border:1px solid transparent}.btn.primary{background:var(--yellow);color:#352900}.btn.light{background:rgba(255,255,255,.12);border-color:rgba(255,255,255,.28);color:white;backdrop-filter:blur(8px)}.btn.dark{background:var(--navy);color:white}.btn.outline{border-color:#cddae4;background:white;color:var(--navy)}
-    .hero-strip{position:absolute;left:0;right:0;bottom:-54px}.quick{display:grid;grid-template-columns:repeat(4,1fr);background:white;border-radius:22px;box-shadow:var(--shadow);overflow:hidden}.quick a{padding:24px 24px;display:flex;align-items:center;gap:13px;border-right:1px solid var(--line)}.quick a:last-child{border:0}.quick-icon{width:43px;height:43px;border-radius:13px;background:#edf6fb;color:var(--blue);display:grid;place-items:center;font-weight:900;font-size:1.05rem}.quick b{display:block;color:var(--navy)}.quick small{color:var(--muted)}
-    main{padding-top:105px}.section{padding:72px 0}.section.alt{background:white}.section-head{display:flex;align-items:end;justify-content:space-between;gap:24px;margin-bottom:28px}.section-head .kicker{font-size:.8rem;letter-spacing:.14em;text-transform:uppercase;font-weight:900;color:var(--blue)}.section-head h2{font-size:clamp(2rem,4vw,3.1rem);letter-spacing:-.045em;line-height:1.05;margin:7px 0 0;color:var(--navy)}.section-head p{max-width:540px;color:var(--muted);margin:0}
-    .notice-grid{display:grid;grid-template-columns:1.1fr 1fr 1fr;gap:18px}.notice{background:white;border:1px solid var(--line);border-radius:var(--radius);padding:24px;box-shadow:0 8px 24px rgba(8,39,69,.06);position:relative;overflow:hidden}.notice.featured{background:linear-gradient(145deg,var(--navy),#0d446f);color:white;border:0}.notice.featured p{color:#d9e8f4}.notice .tag{display:inline-block;background:#edf6fb;color:var(--blue);font-size:.72rem;font-weight:900;padding:6px 9px;border-radius:999px;text-transform:uppercase;letter-spacing:.06em}.notice.featured .tag{background:rgba(255,255,255,.13);color:#fff}.notice h3{font-size:1.25rem;margin:15px 0 8px;line-height:1.18}.notice p{color:var(--muted);margin:0}.notice .date{margin-top:20px;font-size:.82rem;font-weight:800;color:#718499}.notice.featured .date{color:#dcebf5}
-    .news-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.news{background:#fff;border-radius:var(--radius);overflow:hidden;border:1px solid var(--line);box-shadow:0 10px 30px rgba(8,39,69,.05)}.news-top{height:10px;background:linear-gradient(90deg,var(--yellow),var(--orange))}.news-body{padding:24px}.news time{font-size:.78rem;font-weight:850;color:var(--blue);text-transform:uppercase;letter-spacing:.06em}.news h3{margin:9px 0 10px;color:var(--navy);line-height:1.2}.news p{margin:0;color:var(--muted)}.news a{display:inline-block;margin-top:16px;color:var(--blue);font-weight:850}
+
+    .topbar{background:#061f37;color:#dce8f2;font-size:.84rem}
+    .topbar .container{min-height:38px;display:flex;align-items:center;justify-content:space-between;gap:16px}
+    .topbar a{font-weight:800;color:white}
+
+    header{position:sticky;top:0;z-index:40;background:rgba(255,255,255,.95);backdrop-filter:blur(14px);border-bottom:1px solid rgba(8,39,69,.08)}
+    nav{min-height:84px;display:flex;align-items:center;justify-content:space-between;gap:26px}
+    .brand{display:flex;align-items:center;gap:14px;min-width:0}
+    .brand img{width:108px;height:70px;object-fit:contain}
+    .brand-copy{line-height:1.15}
+    .brand-copy strong{display:block;color:var(--navy);font-size:1.04rem;letter-spacing:.01em}
+    .brand-copy span{display:block;color:var(--muted);font-size:.78rem;margin-top:4px}
+    .navlinks{display:flex;gap:4px;align-items:center}
+    .navlinks a{padding:11px 11px;border-radius:12px;font-weight:760;color:#294158;font-size:.91rem}
+    .navlinks a:hover{background:#eef5fa;color:var(--blue)}
+    .navlinks .panel-btn{background:var(--navy);color:white;margin-left:5px}
+    .navlinks .panel-btn:hover{background:var(--blue);color:white}
+    .menu{display:none;border:0;background:#edf4f8;color:var(--navy);font-size:1.35rem;border-radius:12px;width:44px;height:44px;cursor:pointer}
+
+    .hero{min-height:650px;position:relative;display:grid;align-items:end;background-image:linear-gradient(90deg,rgba(4,25,44,.78) 0%,rgba(4,25,44,.51) 43%,rgba(4,25,44,.12) 78%),linear-gradient(0deg,rgba(4,25,44,.55),transparent 44%),url('assets/caic-aereo.jpg');background-size:cover;background-position:center 52%;color:white}
+    .hero-inner{padding:90px 0 82px;max-width:810px}
+    .eyebrow{display:inline-flex;align-items:center;gap:9px;background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.25);padding:8px 13px;border-radius:999px;font-weight:780;font-size:.84rem;backdrop-filter:blur(8px)}
+    .eyebrow i{width:8px;height:8px;border-radius:50%;background:var(--yellow)}
+    h1{font-size:clamp(2.55rem,5vw,5.1rem);line-height:.98;margin:18px 0 18px;letter-spacing:-.055em;max-width:850px}
+    .hero p{font-size:clamp(1rem,1.8vw,1.22rem);max-width:680px;color:#eef7fd;margin:0 0 28px}
+    .cta{display:flex;gap:12px;flex-wrap:wrap}
+    .btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;padding:13px 17px;border-radius:14px;font-weight:850;border:1px solid transparent;cursor:pointer}
+    .btn.primary{background:var(--yellow);color:#352900}.btn.primary:hover{filter:brightness(.97)}
+    .btn.light{background:rgba(255,255,255,.12);border-color:rgba(255,255,255,.28);color:white;backdrop-filter:blur(8px)}
+    .btn.dark{background:var(--navy);color:white}.btn.dark:hover{background:var(--blue)}
+    .btn.outline{border-color:#cddae4;background:white;color:var(--navy)}
+
+    .hero-strip{position:absolute;left:0;right:0;bottom:-54px}
+    .quick{display:grid;grid-template-columns:repeat(4,1fr);background:white;border-radius:22px;box-shadow:var(--shadow);overflow:hidden}
+    .quick a{padding:24px;display:flex;align-items:center;gap:13px;border-right:1px solid var(--line)}
+    .quick a:last-child{border:0}.quick a:hover{background:#f8fbfd}
+    .quick-icon{width:43px;height:43px;border-radius:13px;background:#edf6fb;color:var(--blue);display:grid;place-items:center;font-weight:900;font-size:1.05rem;flex:0 0 auto}
+    .quick b{display:block;color:var(--navy)}.quick small{color:var(--muted)}
+
+    main{padding-top:105px}.section{padding:72px 0}.section.alt{background:white}
+    .section-head{display:flex;align-items:end;justify-content:space-between;gap:24px;margin-bottom:28px}
+    .section-head .kicker,.kicker{font-size:.8rem;letter-spacing:.14em;text-transform:uppercase;font-weight:900;color:var(--blue)}
+    .section-head h2{font-size:clamp(2rem,4vw,3.1rem);letter-spacing:-.045em;line-height:1.05;margin:7px 0 0;color:var(--navy)}
+    .section-head p{max-width:540px;color:var(--muted);margin:0}
+
+    .today-card{margin-bottom:22px;background:linear-gradient(115deg,var(--navy),#0d4b78);color:white;border-radius:24px;padding:22px 24px;display:grid;grid-template-columns:.9fr 1.6fr auto;gap:24px;align-items:center;box-shadow:var(--shadow);overflow:hidden;position:relative}
+    .today-card:after{content:"";position:absolute;width:210px;height:210px;border-radius:50%;background:rgba(255,201,40,.10);right:-70px;top:-95px}
+    .today-date small{display:block;color:#a9c9dd;font-weight:750}.today-date strong{display:block;font-size:1.2rem;margin-top:3px}
+    .today-next{border-left:1px solid rgba(255,255,255,.16);padding-left:24px}.today-next .label{font-size:.72rem;text-transform:uppercase;letter-spacing:.12em;color:#9ed7f5;font-weight:900}.today-next b{display:block;font-size:1.22rem;margin-top:3px}.today-next span{color:#dbeaf4;font-size:.9rem}
+    .today-badge{position:relative;z-index:1;background:var(--yellow);color:#392d00;border-radius:999px;padding:10px 14px;font-weight:900;white-space:nowrap}
+
+    .notice-grid{display:grid;grid-template-columns:1.08fr 1fr 1fr;gap:18px}
+    .notice{background:white;border:1px solid var(--line);border-radius:var(--radius);padding:24px;box-shadow:0 8px 24px rgba(8,39,69,.06);position:relative;overflow:hidden}
+    .notice.featured{background:linear-gradient(145deg,var(--navy),#0d446f);color:white;border:0}
+    .notice.urgent{border:2px solid rgba(232,21,121,.22);background:linear-gradient(145deg,#fff,#fff8fb)}
+    .notice.featured p{color:#d9e8f4}.notice .tag{display:inline-flex;align-items:center;gap:6px;background:#edf6fb;color:var(--blue);font-size:.71rem;font-weight:900;padding:6px 9px;border-radius:999px;text-transform:uppercase;letter-spacing:.06em}
+    .notice.urgent .tag{background:#ffe8f2;color:#b90a60}.notice.featured .tag{background:rgba(255,255,255,.13);color:#fff}
+    .notice h3{font-size:1.25rem;margin:15px 0 8px;line-height:1.18}.notice p{color:var(--muted);margin:0}
+    .notice .date{margin-top:18px;font-size:.82rem;font-weight:800;color:#718499}.notice.featured .date{color:#dcebf5}
+    .text-link{border:0;background:none;padding:0;margin-top:15px;color:var(--blue);font-weight:900;cursor:pointer}.notice.featured .text-link{color:#fff}.text-link:hover{text-decoration:underline}
+
+    .news-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+    .news{background:#fff;border-radius:var(--radius);overflow:hidden;border:1px solid var(--line);box-shadow:0 10px 30px rgba(8,39,69,.06);display:flex;flex-direction:column;min-width:0;transition:transform .18s ease,box-shadow .18s ease}
+    .news:hover{transform:translateY(-3px);box-shadow:0 17px 38px rgba(8,39,69,.11)}
+    .news-media{aspect-ratio:4/3;background:#eaf0f5;overflow:hidden;position:relative;cursor:pointer}
+    .news-media img{width:100%;height:100%;object-fit:cover;transition:transform .25s ease}.news:hover .news-media img{transform:scale(1.025)}
+    .news-media.portrait img{object-position:center 25%}
+    .news-media:after{content:"Ampliar";position:absolute;right:12px;bottom:12px;background:rgba(6,31,55,.78);color:white;padding:6px 9px;border-radius:999px;font-size:.7rem;font-weight:800;backdrop-filter:blur(8px)}
+    .news-body{padding:21px 22px 23px;display:flex;flex-direction:column;flex:1}.news time{font-size:.75rem;font-weight:900;color:var(--blue);text-transform:uppercase;letter-spacing:.06em}
+    .news h3{margin:8px 0 9px;color:var(--navy);line-height:1.22}.news p{margin:0;color:var(--muted);font-size:.92rem}.news .news-link{display:inline-block;margin-top:auto;padding-top:15px;color:var(--blue);font-weight:900}
+
     .schedule-wrap{display:grid;grid-template-columns:.78fr 1.22fr;gap:24px;align-items:start}.schedule-summary{background:var(--navy);color:white;padding:30px;border-radius:var(--radius);position:sticky;top:105px}.schedule-summary .bigtime{font-size:3.2rem;font-weight:920;line-height:1;margin:12px 0 5px;letter-spacing:-.05em}.schedule-summary p{color:#dce9f3}.periods{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}.period{background:white;border:1px solid var(--line);border-radius:17px;padding:18px}.period b{display:block;color:var(--navy);font-size:1.05rem}.period span{display:block;color:var(--blue);font-weight:850;margin-top:4px}.period small{display:block;color:var(--muted);margin-top:3px}
-    .calendar-layout{display:grid;grid-template-columns:1.15fr .85fr;gap:25px;align-items:start}.calendar-card{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:14px;box-shadow:var(--shadow)}.calendar-card img{border-radius:14px;width:100%}.calendar-actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:13px}.calendar-side{display:grid;gap:14px}.stat-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}.stat{background:white;border:1px solid var(--line);border-radius:18px;padding:18px}.stat strong{display:block;color:var(--navy);font-size:1.55rem;letter-spacing:-.03em}.stat span{color:var(--muted);font-size:.86rem}.event-list{background:white;border:1px solid var(--line);border-radius:20px;padding:20px}.event-list h3{margin:0 0 10px;color:var(--navy)}.event{display:grid;grid-template-columns:58px 1fr;gap:13px;padding:14px 0;border-top:1px solid var(--line)}.event:first-of-type{border-top:0}.event-date{width:54px;height:54px;border-radius:14px;background:#edf6fb;display:grid;place-items:center;text-align:center;color:var(--navy);font-weight:900;line-height:1}.event-date small{display:block;color:var(--blue);font-size:.62rem;text-transform:uppercase;margin-top:3px}.event b{display:block}.event span{color:var(--muted);font-size:.86rem}
+
+    .calendar-layout{display:grid;grid-template-columns:1.15fr .85fr;gap:25px;align-items:start}.calendar-card{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:14px;box-shadow:var(--shadow)}.calendar-card img{border-radius:14px;width:100%}.calendar-actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:13px}.calendar-side{display:grid;gap:14px}.stat-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}.stat{background:white;border:1px solid var(--line);border-radius:18px;padding:18px}.stat strong{display:block;color:var(--navy);font-size:1.55rem;letter-spacing:-.03em}.stat span{color:var(--muted);font-size:.86rem}.event-list{background:white;border:1px solid var(--line);border-radius:20px;padding:20px}.event-list h3{margin:0 0 10px;color:var(--navy)}.event{display:grid;grid-template-columns:58px 1fr;gap:13px;padding:14px 0;border-top:1px solid var(--line)}.event:first-of-type{border-top:0}.event-date{width:54px;height:54px;border-radius:14px;background:#edf6fb;display:grid;place-items:center;text-align:center;color:var(--navy);font-weight:900;line-height:1}.event-date.school{background:#fff0f7;color:#b90a60}.event-date small{display:block;color:var(--blue);font-size:.62rem;text-transform:uppercase;margin-top:3px}.event-date.school small{color:#c52372}.event b{display:block}.event span{color:var(--muted);font-size:.86rem}.event-empty{padding:12px 0;color:var(--muted)}
+
     .location{display:grid;grid-template-columns:.82fr 1.18fr;gap:24px}.location-info{background:linear-gradient(160deg,var(--navy),#0b507c);color:white;padding:34px;border-radius:var(--radius)}.location-info h3{font-size:1.65rem;margin:0 0 14px}.location-info p{color:#e2edf5}.address{margin:25px 0;padding:17px;border-radius:16px;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.15)}.map{min-height:410px;border:0;width:100%;border-radius:var(--radius);box-shadow:var(--shadow)}
-    footer{background:#061f37;color:#d7e6f1;padding:42px 0 26px}.footer-grid{display:grid;grid-template-columns:1.5fr 1fr 1fr;gap:28px}.footer-logo{display:flex;gap:15px;align-items:center}.footer-logo img{width:100px}.footer-logo strong{color:white;display:block}.footer-logo span{font-size:.84rem;color:#a9c0d2}.footer-title{font-weight:900;color:white;margin-bottom:9px}.footer-links a{display:block;color:#bdd0de;margin:6px 0}.copyright{border-top:1px solid rgba(255,255,255,.12);margin-top:30px;padding-top:18px;font-size:.8rem;color:#91aabf;display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
-    @media(max-width:920px){.navlinks{position:absolute;left:18px;right:18px;top:88px;background:white;border:1px solid var(--line);border-radius:18px;box-shadow:var(--shadow);padding:12px;display:none;flex-direction:column;align-items:stretch}.navlinks.open{display:flex}.menu{display:block}.brand-copy span{display:none}.hero{min-height:620px;background-position:center}.quick{grid-template-columns:1fr 1fr}.quick a:nth-child(2){border-right:0}.quick a:nth-child(-n+2){border-bottom:1px solid var(--line)}.notice-grid,.news-grid{grid-template-columns:1fr}.schedule-wrap,.calendar-layout,.location{grid-template-columns:1fr}.schedule-summary{position:static}.periods{grid-template-columns:repeat(2,1fr)}.section-head{align-items:start;flex-direction:column}.footer-grid{grid-template-columns:1fr 1fr}}
-    @media(max-width:620px){.container{width:min(100% - 24px,var(--max))}.topbar .container{font-size:.74rem}.topbar .container span:last-child{display:none}nav{height:72px}.brand img{width:70px;height:53px}.brand-copy strong{font-size:.84rem}.hero{min-height:620px}.hero-inner{padding:78px 0 118px}.hero-strip{bottom:-88px}.quick{grid-template-columns:1fr 1fr}.quick a{padding:15px 12px;gap:9px}.quick-icon{width:37px;height:37px}.quick small{display:none}main{padding-top:130px}.section{padding:55px 0}.periods{grid-template-columns:1fr}.stat-grid{grid-template-columns:1fr 1fr}.footer-grid{grid-template-columns:1fr}.location-info{padding:26px}.map{min-height:330px}h1{font-size:2.72rem}}
+
+    footer{background:#061f37;color:#d7e6f1;padding:46px 0 26px}.footer-grid{display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr;gap:28px}.footer-logo{display:flex;gap:15px;align-items:center}.footer-logo img{width:108px}.footer-logo strong{color:white;display:block}.footer-logo span{font-size:.84rem;color:#a9c0d2}.footer-title{font-weight:900;color:white;margin-bottom:9px}.footer-links a{display:block;color:#bdd0de;margin:6px 0}.footer-links a:hover{color:white}.footer-contact{color:#bdd0de;font-size:.9rem}.copyright{border-top:1px solid rgba(255,255,255,.12);margin-top:30px;padding-top:18px;font-size:.8rem;color:#91aabf;display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
+
+    .modal{position:fixed;inset:0;z-index:100;background:rgba(3,18,31,.76);display:none;align-items:center;justify-content:center;padding:24px;backdrop-filter:blur(5px)}
+    .modal.open{display:flex}.modal-card{background:white;border-radius:24px;max-width:760px;width:min(100%,760px);max-height:min(88vh,900px);overflow:auto;box-shadow:0 30px 80px rgba(0,0,0,.3);position:relative}.modal-card.image-modal{max-width:min(92vw,1050px);background:#0b1823;padding:12px}.modal-card.image-modal img{max-height:82vh;width:100%;object-fit:contain;border-radius:16px}
+    .modal-close{position:sticky;top:12px;margin-left:auto;margin-right:12px;z-index:3;width:40px;height:40px;border:0;border-radius:50%;background:#eef4f7;color:var(--navy);display:grid;place-items:center;font-size:1.35rem;cursor:pointer;float:right}.image-modal .modal-close{background:rgba(255,255,255,.93)}
+    .modal-content{padding:30px 32px 32px}.modal-content .tag{display:inline-block;background:#edf6fb;color:var(--blue);font-size:.72rem;font-weight:900;padding:6px 9px;border-radius:999px;text-transform:uppercase;letter-spacing:.06em}.modal-content h3{font-size:1.75rem;line-height:1.15;color:var(--navy);margin:12px 0 18px}.modal-content p{color:#435568;margin:0 0 13px}.modal-content .signature{font-weight:800;color:var(--navy);margin-top:18px}
+
+    @media(max-width:1020px){
+      .brand img{width:95px}.navlinks a{padding:10px 8px;font-size:.86rem}.footer-grid{grid-template-columns:1.5fr 1fr 1fr}
+      .footer-grid>div:last-child{grid-column:2/4}
+    }
+    @media(max-width:920px){
+      .navlinks{position:absolute;left:18px;right:18px;top:88px;background:white;border:1px solid var(--line);border-radius:18px;box-shadow:var(--shadow);padding:12px;display:none;flex-direction:column;align-items:stretch}.navlinks.open{display:flex}.menu{display:block}.brand-copy span{display:none}
+      .hero{min-height:620px;background-position:center}.quick{grid-template-columns:1fr 1fr}.quick a:nth-child(2){border-right:0}.quick a:nth-child(-n+2){border-bottom:1px solid var(--line)}
+      .notice-grid{grid-template-columns:1fr}.news-grid{grid-template-columns:1fr 1fr}.schedule-wrap,.calendar-layout,.location{grid-template-columns:1fr}.schedule-summary{position:static}.periods{grid-template-columns:repeat(2,1fr)}
+      .today-card{grid-template-columns:1fr 1.4fr}.today-badge{grid-column:1/3;justify-self:start}.footer-grid{grid-template-columns:1fr 1fr}.footer-grid>div:last-child{grid-column:auto}
+    }
+    @media(max-width:620px){
+      .container{width:min(100% - 24px,var(--max))}.topbar .container{font-size:.76rem}.topbar .container span:first-child{display:none}
+      nav{min-height:76px}.brand img{width:84px;height:59px}.brand-copy strong{font-size:.95rem}.hero{min-height:590px;background-position:58% center}.hero-inner{padding:72px 0 112px}.hero p{font-size:1rem}.hero-strip{bottom:-94px}.quick a{padding:17px 14px;gap:9px}.quick-icon{width:38px;height:38px}.quick small{font-size:.72rem}
+      main{padding-top:145px}.section{padding:54px 0}.section-head{display:block}.section-head p{margin-top:13px}.today-card{grid-template-columns:1fr;padding:20px;gap:15px}.today-next{border-left:0;border-top:1px solid rgba(255,255,255,.16);padding-left:0;padding-top:14px}.today-badge{grid-column:auto}
+      .news-grid{grid-template-columns:1fr}.news-media{aspect-ratio:1/1}.periods{grid-template-columns:1fr 1fr}.period{padding:15px}.stat-grid{grid-template-columns:1fr 1fr}.calendar-actions .btn{width:100%}.footer-grid{grid-template-columns:1fr}.modal{padding:12px}.modal-content{padding:24px 22px 28px}.modal-content h3{font-size:1.45rem}
+    }
   </style>
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"School",
+    "name":"Escola Municipal Professor José Antonio Flygare Telles — CAIC",
+    "url":"https://caic.com.br/",
+    "address":{"@type":"PostalAddress","streetAddress":"Rua Salvador Natucci, 110","addressLocality":"Castro","addressRegion":"PR","addressCountry":"BR"}
+  }
+  </script>
 </head>
 <body>
-  <div class="topbar"><div class="container"><span>Escola Municipal • Castro, Paraná</span><span>Portal oficial do CAIC &nbsp; • &nbsp; <a href="https://painel.caic.com.br">Acessar painel</a></span></div></div>
+  <div class="topbar"><div class="container"><span>Escola Municipal • Castro, Paraná</span><span>Portal oficial do CAIC &nbsp;•&nbsp; <a href="https://painel.caic.com.br">Acessar painel</a></span></div></div>
+
   <header>
     <nav class="container">
       <a class="brand" href="#inicio" aria-label="CAIC - início">
         <img src="assets/logo-caic.png" alt="Logo CAIC #TUDOdeBOM" />
         <div class="brand-copy"><strong>CAIC</strong><span>Escola Municipal Professor José Antonio Flygare Telles</span></div>
       </a>
-      <button class="menu" aria-label="Abrir menu" onclick="document.querySelector('.navlinks').classList.toggle('open')">☰</button>
+      <button class="menu" aria-label="Abrir menu" aria-expanded="false">☰</button>
       <div class="navlinks">
         <a href="#avisos">Avisos</a><a href="#noticias">Notícias</a><a href="#horarios">Horários</a><a href="#calendario">Calendário</a><a href="#localizacao">Localização</a><a class="panel-btn" href="https://painel.caic.com.br">Painel CAIC ↗</a>
       </div>
@@ -68,20 +172,47 @@
 
   <main>
     <section class="section" id="avisos"><div class="container">
+      <div class="today-card" aria-live="polite">
+        <div class="today-date"><small>Hoje no CAIC</small><strong id="todayDate">Carregando data…</strong></div>
+        <div class="today-next"><span class="label">Próximo destaque</span><b id="nextEventTitle">Carregando…</b><span id="nextEventDesc"></span></div>
+        <div class="today-badge" id="nextEventBadge">Em breve</div>
+      </div>
+
       <div class="section-head"><div><div class="kicker">Fique por dentro</div><h2>Avisos importantes</h2></div><p>Informações rápidas para famílias, estudantes e comunidade escolar.</p></div>
       <div class="notice-grid">
-        <article class="notice featured"><span class="tag">Calendário 2026</span><h3>2º semestre em andamento</h3><p>O segundo semestre letivo segue de 27 de julho a 18 de dezembro, completando os 200 dias letivos previstos.</p><div class="date">Atualização: setembro de 2026</div></article>
-        <article class="notice"><span class="tag">Próxima data</span><h3>Recesso escolar em 13 de outubro</h3><p>O calendário municipal prevê recesso escolar na terça-feira, 13/10, após o feriado de 12/10.</p><div class="date">Consulte o calendário completo abaixo.</div></article>
-        <article class="notice"><span class="tag">Evento escolar</span><h3>JECA/JEPCA</h3><p>Período indicado no calendário: de 30/10 a 13/11, sujeito a alterações conforme os eventos da Secretaria Municipal de Esporte.</p><div class="date">Calendário Escolar Municipal 2026</div></article>
+        <article class="notice urgent"><span class="tag">🧡 18/09 • Prova Paraná</span><h3>Pedimos que os estudantes não faltem</h3><p>A Prova Paraná será realizada nesta sexta-feira. A presença dos estudantes é muito importante.</p><button class="text-link" data-notice="prova-parana">Ler comunicado completo →</button><div class="date">Coordenação • 17/09/2026</div></article>
+        <article class="notice featured"><span class="tag">🌸 19/09 • 14h</span><h3>Festa da Primavera confirmada</h3><p>A festa será realizada neste sábado e está confirmada mesmo em caso de chuva. A escola está organizando os espaços cobertos para receber as famílias.</p><button class="text-link" data-notice="festa-chuva">Ler comunicado do diretor →</button><div class="date">Direção • setembro de 2026</div></article>
+        <article class="notice"><span class="tag">❤️ Apresentações</span><h3>Os pequenos estão ensaiando há meses</h3><p>Se alguma criança que está ensaiando não puder comparecer, a família deve avisar a escola para que a professora possa reorganizar a apresentação.</p><button class="text-link" data-notice="festa-convite">Ler comunicado completo →</button><div class="date">Toda a família está convidada.</div></article>
       </div>
     </div></section>
 
     <section class="section alt" id="noticias"><div class="container">
-      <div class="section-head"><div><div class="kicker">Comunidade escolar</div><h2>Notícias</h2></div><p>Esta área pode receber matérias, projetos, eventos, comunicados e registros da rotina do CAIC.</p></div>
+      <div class="section-head"><div><div class="kicker">Comunidade escolar</div><h2>Notícias e novidades</h2></div><p>Informações recentes do CAIC, eventos, ações e comunicados para as famílias.</p></div>
       <div class="news-grid">
-        <article class="news"><div class="news-top"></div><div class="news-body"><time>16 set 2026</time><h3>Novo portal do CAIC entra em fase de publicação</h3><p>O site passa a reunir os principais conteúdos da escola em um endereço simples: caic.com.br.</p><a href="#inicio">Conhecer o portal →</a></div></article>
-        <article class="news"><div class="news-top"></div><div class="news-body"><time>Calendário escolar</time><h3>Calendário Municipal 2026 disponível para consulta</h3><p>Confira feriados, recessos, trimestres, períodos letivos e demais datas previstas para o ano.</p><a href="docs/calendario-escolar-2026.pdf" target="_blank" rel="noopener">Abrir PDF →</a></div></article>
-        <article class="news"><div class="news-top"></div><div class="news-body"><time>Próximas publicações</time><h3>Projetos e acontecimentos do CAIC</h3><p>Espaço preparado para receber notícias, fotos autorizadas e destaques da comunidade escolar.</p><a href="#noticias">Em breve →</a></div></article>
+        <article class="news">
+          <div class="news-media" data-image="assets/noticias/roupa-festa.webp" data-alt="Com que roupa eu vou? A que você preferir. Festa da Primavera"><img loading="lazy" src="assets/noticias/roupa-festa.webp" alt="Com que roupa eu vou? A que você preferir. Festa da Primavera"></div>
+          <div class="news-body"><time>17 set 2026</time><h3>Festa da Primavera: venha com a roupa que preferir</h3><p>O importante é a presença das famílias para prestigiar as apresentações das crianças.</p><button class="text-link news-link" data-image="assets/noticias/roupa-festa.webp" data-alt="Com que roupa eu vou?">Ver imagem completa →</button></div>
+        </article>
+        <article class="news">
+          <div class="news-media" data-image="assets/noticias/compras-antecipadas.webp" data-alt="Compras antecipadas da Festa da Primavera"><img loading="lazy" src="assets/noticias/compras-antecipadas.webp" alt="Compras antecipadas da Festa da Primavera"></div>
+          <div class="news-body"><time>16 set 2026</time><h3>Compras antecipadas da Festa da Primavera</h3><p>O prazo do formulário terminou em 16/09. As fichas das compras antecipadas serão entregues entre quinta e sexta-feira.</p><button class="text-link news-link" data-notice="compras-festa">Ver informações →</button></div>
+        </article>
+        <article class="news">
+          <div class="news-media portrait" data-image="assets/noticias/ordem-apresentacoes.webp" data-alt="Ordem das apresentações da Festa da Primavera"><img loading="lazy" src="assets/noticias/ordem-apresentacoes.webp" alt="Ordem das apresentações da Festa da Primavera"></div>
+          <div class="news-body"><time>15 set 2026</time><h3>Confira a ordem das apresentações</h3><p>A programação das turmas para a Festa da Primavera já está disponível para consulta.</p><button class="text-link news-link" data-image="assets/noticias/ordem-apresentacoes.webp" data-alt="Ordem das apresentações">Ampliar programação →</button></div>
+        </article>
+        <article class="news">
+          <div class="news-media" data-image="assets/noticias/grupo-beto-carrero.webp" data-alt="Grupo de WhatsApp do Beto Carrero será montado hoje"><img loading="lazy" src="assets/noticias/grupo-beto-carrero.webp" alt="Grupo de WhatsApp do Beto Carrero será montado hoje"></div>
+          <div class="news-body"><time>14 set 2026</time><h3>Grupo de WhatsApp do Beto Carrero</h3><p>A escola informou a organização do grupo de WhatsApp para as orientações relacionadas à atividade.</p><button class="text-link news-link" data-image="assets/noticias/grupo-beto-carrero.webp" data-alt="Grupo de WhatsApp do Beto Carrero">Ver comunicado →</button></div>
+        </article>
+        <article class="news">
+          <div class="news-media" data-image="assets/noticias/festa-primavera-19-09.webp" data-alt="Festa da Primavera 19 de setembro às 14h"><img loading="lazy" src="assets/noticias/festa-primavera-19-09.webp" alt="Festa da Primavera 19 de setembro às 14h"></div>
+          <div class="news-body"><time>14 set 2026</time><h3>Festa da Primavera • 19/09 às 14h</h3><p>Um sábado especial para acompanhar as apresentações e participar da festa com a comunidade escolar.</p><button class="text-link news-link" data-notice="festa-chuva">Ler orientações →</button></div>
+        </article>
+        <article class="news">
+          <div class="news-media" data-image="assets/noticias/mochilas-estojos.webp" data-alt="Entrega de mochilas e estojos"><img loading="lazy" src="assets/noticias/mochilas-estojos.webp" alt="Entrega de mochilas e estojos"></div>
+          <div class="news-body"><time>14 set 2026</time><h3>Entrega de mochilas e estojos</h3><p>Os materiais estão sendo entregues aos estudantes do CAIC.</p><button class="text-link news-link" data-image="assets/noticias/mochilas-estojos.webp" data-alt="Entrega de mochilas e estojos">Ver publicação →</button></div>
+        </article>
       </div>
     </div></section>
 
@@ -90,15 +221,7 @@
       <div class="schedule-wrap">
         <aside class="schedule-summary"><div class="kicker" style="color:#8fd6ff">Tempo integral</div><div class="bigtime">07:30</div><strong>Entrada</strong><div class="bigtime" style="margin-top:28px">16:30</div><strong>Saída</strong><p>Os blocos abaixo facilitam a consulta rápida da sequência diária de aulas e atividades.</p></aside>
         <div class="periods">
-          <div class="period"><b>1ª aula</b><span>07:30–08:30</span><small>1 hora</small></div>
-          <div class="period"><b>2ª aula</b><span>08:30–09:45</span><small>1h15</small></div>
-          <div class="period"><b>3ª aula</b><span>09:45–10:40</span><small>55 min</small></div>
-          <div class="period"><b>4ª aula</b><span>10:40–11:30</span><small>50 min</small></div>
-          <div class="period"><b>5ª aula</b><span>11:30–12:15</span><small>45 min</small></div>
-          <div class="period"><b>6ª aula</b><span>12:15–13:00</span><small>45 min</small></div>
-          <div class="period"><b>7ª aula</b><span>13:00–14:10</span><small>1h10</small></div>
-          <div class="period"><b>8ª aula</b><span>14:10–15:30</span><small>1h20</small></div>
-          <div class="period"><b>9ª aula</b><span>15:30–16:30</span><small>1 hora</small></div>
+          <div class="period"><b>1ª aula</b><span>07:30–08:30</span><small>1 hora</small></div><div class="period"><b>2ª aula</b><span>08:30–09:45</span><small>1h15</small></div><div class="period"><b>3ª aula</b><span>09:45–10:40</span><small>55 min</small></div><div class="period"><b>4ª aula</b><span>10:40–11:30</span><small>50 min</small></div><div class="period"><b>5ª aula</b><span>11:30–12:15</span><small>45 min</small></div><div class="period"><b>6ª aula</b><span>12:15–13:00</span><small>45 min</small></div><div class="period"><b>7ª aula</b><span>13:00–14:10</span><small>1h10</small></div><div class="period"><b>8ª aula</b><span>14:10–15:30</span><small>1h20</small></div><div class="period"><b>9ª aula</b><span>15:30–16:30</span><small>1 hora</small></div>
         </div>
       </div>
     </div></section>
@@ -109,13 +232,7 @@
         <div class="calendar-card"><img src="assets/calendario-2026.jpg" alt="Calendário Escolar Municipal de Castro 2026" /><div class="calendar-actions"><a class="btn dark" href="docs/calendario-escolar-2026.pdf" target="_blank" rel="noopener">Abrir calendário em PDF</a><a class="btn outline" href="assets/calendario-2026.jpg" target="_blank">Ampliar imagem</a></div></div>
         <div class="calendar-side">
           <div class="stat-grid"><div class="stat"><strong>200</strong><span>dias letivos</span></div><div class="stat"><strong>100 + 100</strong><span>dias por semestre</span></div><div class="stat"><strong>27/07</strong><span>início do 2º semestre</span></div><div class="stat"><strong>18/12</strong><span>término das aulas</span></div></div>
-          <div class="event-list"><h3>Próximas datas</h3>
-            <div class="event"><div class="event-date">12<small>OUT</small></div><div><b>N. S. Aparecida</b><span>Feriado nacional.</span></div></div>
-            <div class="event"><div class="event-date">13<small>OUT</small></div><div><b>Recesso escolar</b><span>Data prevista no calendário municipal.</span></div></div>
-            <div class="event"><div class="event-date">30<small>OUT</small></div><div><b>Início JECA/JEPCA</b><span>Período previsto até 13/11.</span></div></div>
-            <div class="event"><div class="event-date">02<small>NOV</small></div><div><b>Finados</b><span>Feriado nacional.</span></div></div>
-            <div class="event"><div class="event-date">18<small>DEZ</small></div><div><b>Término das aulas</b><span>Encerramento do 2º semestre letivo.</span></div></div>
-          </div>
+          <div class="event-list"><h3>Próximas datas</h3><div id="eventList"></div></div>
         </div>
       </div>
     </div></section>
@@ -130,11 +247,76 @@
   </main>
 
   <footer><div class="container">
-    <div class="footer-grid"><div class="footer-logo"><img src="assets/logo-caic.png" alt="Logo CAIC"><div><strong>Escola Municipal Professor José Antonio Flygare Telles</strong><span>CAIC • Castro/PR</span></div></div><div><div class="footer-title">Acesso rápido</div><div class="footer-links"><a href="#avisos">Avisos</a><a href="#horarios">Horários</a><a href="#calendario">Calendário</a></div></div><div><div class="footer-title">Sistema</div><div class="footer-links"><a href="https://painel.caic.com.br">Painel CAIC ↗</a><a href="docs/calendario-escolar-2026.pdf">Calendário 2026</a></div></div></div>
-    <div class="copyright"><span>© 2026 CAIC — Escola Municipal Professor José Antonio Flygare Telles.</span><span>Castro • Paraná</span></div>
+    <div class="footer-grid">
+      <div class="footer-logo"><img src="assets/logo-caic.png" alt="Logo CAIC"><div><strong>Escola Municipal Professor José Antonio Flygare Telles</strong><span>CAIC • Castro/PR</span></div></div>
+      <div><div class="footer-title">Portal</div><div class="footer-links"><a href="#avisos">Avisos</a><a href="#noticias">Notícias</a><a href="#horarios">Horários</a><a href="#calendario">Calendário</a></div></div>
+      <div><div class="footer-title">Acesso</div><div class="footer-links"><a href="https://painel.caic.com.br">Painel CAIC ↗</a><a href="docs/calendario-escolar-2026.pdf" target="_blank">Calendário 2026 ↗</a><a href="#localizacao">Localização</a></div></div>
+      <div><div class="footer-title">Endereço</div><div class="footer-contact">Rua Salvador Natucci, 110<br>Jardim das Araucárias II<br>Castro — Paraná</div></div>
+    </div>
+    <div class="copyright"><span>© 2026 CAIC — Escola Municipal Professor José Antonio Flygare Telles.</span><span>Portal oficial • caic.com.br</span></div>
   </div></footer>
+
+  <div class="modal" id="modal" role="dialog" aria-modal="true" aria-hidden="true">
+    <div class="modal-card" id="modalCard"><button class="modal-close" aria-label="Fechar">×</button><div id="modalBody"></div></div>
+  </div>
+
   <script>
-    document.querySelectorAll('.navlinks a').forEach(a=>a.addEventListener('click',()=>document.querySelector('.navlinks').classList.remove('open')));
+    const menuBtn=document.querySelector('.menu');
+    const navLinks=document.querySelector('.navlinks');
+    menuBtn.addEventListener('click',()=>{const open=navLinks.classList.toggle('open');menuBtn.setAttribute('aria-expanded',open?'true':'false')});
+    document.querySelectorAll('.navlinks a').forEach(a=>a.addEventListener('click',()=>{navLinks.classList.remove('open');menuBtn.setAttribute('aria-expanded','false')}));
+
+    const notices={
+      'prova-parana':{
+        tag:'Coordenação • Prova Paraná',title:'Presença importante na Prova Paraná',
+        paragraphs:['Boa tarde, queridos responsáveis!','Amanhã os pequenos realizarão a Prova Paraná. Solicitamos encarecidamente que eles NÃO FALTEM 🧡','Agradecemos desde já a compreensão e colaboração.']
+      },
+      'festa-chuva':{
+        tag:'Direção • Festa da Primavera',title:'A festa será realizada mesmo em caso de chuva',
+        paragraphs:['Queridos pais, um excelente dia!','Vamos fazer nossa festa no sábado, mesmo que tenha chuva. Não conseguimos mais mudar por conta de data e estamos organizando tudo para que todos tenham conforto nos locais cobertos da escola.','As apresentações estão lindas e os pequenos empolgados. ❤️','Peço que, caso alguma criança que está ensaiando não possa vir, me avise no privado para que a prof possa reorganizar a posição das crianças para a apresentação.','Falo isso porque alguns pais autorizam a criança a ensaiar e às vezes não aparecem nas festas. E muitas vezes essa criança faz diferença na apresentação.','Gostaríamos que todos fossem, para que os pequenos se apresentem para vocês. E mesmo que a criança não vá apresentar, a família está convidada. ❤️']
+      },
+      'festa-convite':{
+        tag:'Direção • Festa da Primavera',title:'Festa da Primavera confirmada para 19/09',
+        paragraphs:['Queridos pais','Nossa Festa da Primavera está confirmada para dia 19/09, neste sábado.','O formulário de compras antecipadas dos salgados, bolos, refrigerantes e demais itens ficou disponível até quarta-feira, 16/09, para agilizar o atendimento durante a festa.','As fichas para quem comprou antecipadamente serão entregues entre quinta e sexta-feira.','Não deixem de participar. Os pequenos estão ensaiando há meses! ❤️']
+      },
+      'compras-festa':{
+        tag:'Festa da Primavera',title:'Compras antecipadas encerradas',
+        paragraphs:['O formulário de compras antecipadas ficou disponível até quarta-feira, 16/09.','As fichas de quem realizou compra antecipada serão entregues entre quinta e sexta-feira.','A ação ajuda a agilizar o atendimento durante a Festa da Primavera e contribui com a arrecadação da escola.']
+      }
+    };
+
+    const modal=document.getElementById('modal'),modalCard=document.getElementById('modalCard'),modalBody=document.getElementById('modalBody');
+    function openTextModal(key){const n=notices[key];if(!n)return;modalCard.className='modal-card';modalBody.innerHTML=`<div class="modal-content"><span class="tag">${n.tag}</span><h3>${n.title}</h3>${n.paragraphs.map(p=>`<p>${p}</p>`).join('')}</div>`;openModal()}
+    function openImageModal(src,alt='Publicação do CAIC'){modalCard.className='modal-card image-modal';modalBody.innerHTML=`<img src="${src}" alt="${alt.replaceAll('"','&quot;')}">`;openModal()}
+    function openModal(){modal.classList.add('open');modal.setAttribute('aria-hidden','false');document.body.classList.add('modal-open')}
+    function closeModal(){modal.classList.remove('open');modal.setAttribute('aria-hidden','true');document.body.classList.remove('modal-open')}
+    document.querySelector('.modal-close').addEventListener('click',closeModal);modal.addEventListener('click',e=>{if(e.target===modal)closeModal()});document.addEventListener('keydown',e=>{if(e.key==='Escape')closeModal()});
+    document.querySelectorAll('[data-notice]').forEach(el=>el.addEventListener('click',()=>openTextModal(el.dataset.notice)));
+    document.querySelectorAll('[data-image]').forEach(el=>el.addEventListener('click',()=>openImageModal(el.dataset.image,el.dataset.alt||'')));
+
+    const schoolEvents=[
+      {date:'2026-09-18T07:30:00-03:00',day:18,mon:'SET',title:'Prova Paraná',desc:'Presença dos estudantes é muito importante.',type:'school'},
+      {date:'2026-09-19T14:00:00-03:00',day:19,mon:'SET',title:'Festa da Primavera • 14h',desc:'Evento confirmado, inclusive em caso de chuva.',type:'school'},
+      {date:'2026-10-12T00:00:00-03:00',day:12,mon:'OUT',title:'N. S. Aparecida',desc:'Feriado nacional.'},
+      {date:'2026-10-13T00:00:00-03:00',day:13,mon:'OUT',title:'Recesso escolar',desc:'Data prevista no calendário municipal.'},
+      {date:'2026-10-30T00:00:00-03:00',day:30,mon:'OUT',title:'Início JECA/JEPCA',desc:'Período previsto até 13/11.'},
+      {date:'2026-11-02T00:00:00-03:00',day:2,mon:'NOV',title:'Finados',desc:'Feriado nacional.'},
+      {date:'2026-11-15T00:00:00-03:00',day:15,mon:'NOV',title:'Proclamação da República',desc:'Feriado nacional.'},
+      {date:'2026-11-20T00:00:00-03:00',day:20,mon:'NOV',title:'Dia da Consciência Negra',desc:'Feriado.'},
+      {date:'2026-12-18T16:30:00-03:00',day:18,mon:'DEZ',title:'Término das aulas',desc:'Encerramento do 2º semestre letivo.'}
+    ];
+    const now=new Date(); const todayStart=new Date(now.getFullYear(),now.getMonth(),now.getDate());
+    document.getElementById('todayDate').textContent=new Intl.DateTimeFormat('pt-BR',{weekday:'long',day:'2-digit',month:'long'}).format(now);
+    const upcoming=schoolEvents.filter(e=>new Date(e.date)>=todayStart).sort((a,b)=>new Date(a.date)-new Date(b.date));
+    const next=upcoming[0];
+    if(next){
+      document.getElementById('nextEventTitle').textContent=next.title;document.getElementById('nextEventDesc').textContent=next.desc;
+      const eventDate=new Date(next.date);const diff=Math.ceil((new Date(eventDate.getFullYear(),eventDate.getMonth(),eventDate.getDate())-todayStart)/86400000);
+      document.getElementById('nextEventBadge').textContent=diff===0?'Hoje':diff===1?'Amanhã':`Em ${diff} dias`;
+    }else{document.getElementById('nextEventTitle').textContent='Ano letivo em andamento';document.getElementById('nextEventDesc').textContent='Consulte o calendário completo abaixo.';document.getElementById('nextEventBadge').textContent='2026'}
+    const eventList=document.getElementById('eventList');
+    const list=upcoming.slice(0,5);
+    eventList.innerHTML=list.length?list.map(e=>`<div class="event"><div class="event-date ${e.type==='school'?'school':''}">${String(e.day).padStart(2,'0')}<small>${e.mon}</small></div><div><b>${e.title}</b><span>${e.desc}</span></div></div>`).join(''):'<div class="event-empty">Não há outras datas futuras cadastradas neste calendário.</div>';
   </script>
 </body>
 </html>
