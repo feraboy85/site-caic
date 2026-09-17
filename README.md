@@ -1,4 +1,4 @@
-# CAIC — Site V2
+# CAIC — Site V2.1
 
 Versão atualizada do portal público do CAIC para `https://caic.com.br`.
 
