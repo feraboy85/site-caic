@@ -4,7 +4,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <meta name="theme-color" content="#082745" />
-  <meta name="description" content="Portal oficial do CAIC — Escola Municipal Professor José Antonio Flygare Telles, Castro/PR. Avisos, notícias, horários, calendário e localização." />
+  <meta name="description" content="Festa da Primavera no CAIC — 19/09 às 14h. Portal oficial do CAIC — Escola Municipal Professor José Antonio Flygare Telles, Castro/PR. Avisos, notícias, horários, calendário e localização." />
   <meta name="robots" content="index,follow" />
   <link rel="canonical" href="https://caic.com.br/" />
   <meta property="og:type" content="website" />
@@ -12,8 +12,8 @@
   <meta property="og:title" content="CAIC | Escola Municipal Professor José Antonio Flygare Telles" />
   <meta property="og:description" content="Avisos, notícias, horários e calendário do CAIC de Castro/PR." />
   <meta property="og:url" content="https://caic.com.br/" />
-  <meta property="og:image" content="https://caic.com.br/assets/caic-aereo.jpg" />
-  <title>CAIC | Escola Municipal Professor José Antonio Flygare Telles</title>
+  <meta property="og:image" content="https://caic.com.br/assets/hero-festa-primavera.webp" />
+  <title>Festa da Primavera | CAIC | Escola Municipal Professor José Antonio Flygare Telles</title>
   <style>
     :root{
       --navy:#082745; --navy-2:#0d3a61; --blue:#176aa4; --sky:#eaf5fb;
@@ -47,7 +47,20 @@
     .navlinks .panel-btn:hover{background:var(--blue);color:white}
     .menu{display:none;border:0;background:#edf4f8;color:var(--navy);font-size:1.35rem;border-radius:12px;width:44px;height:44px;cursor:pointer}
 
-    .hero{min-height:650px;position:relative;display:grid;align-items:end;background-image:linear-gradient(90deg,rgba(4,25,44,.78) 0%,rgba(4,25,44,.51) 43%,rgba(4,25,44,.12) 78%),linear-gradient(0deg,rgba(4,25,44,.55),transparent 44%),url('assets/caic-aereo.jpg');background-size:cover;background-position:center 52%;color:white}
+
+    .hero::after{
+      content:"";
+      position:absolute;
+      inset:0;
+      pointer-events:none;
+      background:
+        radial-gradient(circle at 78% 20%, rgba(255,214,102,.16), transparent 24%),
+        radial-gradient(circle at 16% 78%, rgba(242,73,154,.14), transparent 26%);
+      z-index:0;
+    }
+    .hero .container{position:relative;z-index:1}
+
+    .hero{min-height:650px;position:relative;display:grid;align-items:end;background-image:linear-gradient(90deg,rgba(4,25,44,.78) 0%,rgba(4,25,44,.51) 43%,rgba(4,25,44,.12) 78%),linear-gradient(0deg,rgba(4,25,44,.55),transparent 44%),url('assets/destaque-festa-primavera.webp');background-size:cover;background-position:center;color:white}
     .hero-inner{padding:90px 0 82px;max-width:810px}
     .eyebrow{display:inline-flex;align-items:center;gap:9px;background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.25);padding:8px 13px;border-radius:999px;font-weight:780;font-size:.84rem;backdrop-filter:blur(8px)}
     .eyebrow i{width:8px;height:8px;border-radius:50%;background:var(--yellow)}
@@ -72,8 +85,7 @@
     .section-head .kicker,.kicker{font-size:.8rem;letter-spacing:.14em;text-transform:uppercase;font-weight:900;color:var(--blue)}
     .section-head h2{font-size:clamp(2rem,4vw,3.1rem);letter-spacing:-.045em;line-height:1.05;margin:7px 0 0;color:var(--navy)}
     .section-head p{max-width:540px;color:var(--muted);margin:0}
-
-    .today-card{margin-bottom:22px;background:linear-gradient(115deg,var(--navy),#0d4b78);color:white;border-radius:24px;padding:22px 24px;display:grid;grid-template-columns:.9fr 1.6fr auto;gap:24px;align-items:center;box-shadow:var(--shadow);overflow:hidden;position:relative}
+.today-card{margin-bottom:22px;background:linear-gradient(115deg,var(--navy),#0d4b78);color:white;border-radius:24px;padding:22px 24px;display:grid;grid-template-columns:.9fr 1.6fr auto;gap:24px;align-items:center;box-shadow:var(--shadow);overflow:hidden;position:relative}
     .today-card:after{content:"";position:absolute;width:210px;height:210px;border-radius:50%;background:rgba(255,201,40,.10);right:-70px;top:-95px}
     .today-date small{display:block;color:#a9c9dd;font-weight:750}.today-date strong{display:block;font-size:1.2rem;margin-top:3px}
     .today-next{border-left:1px solid rgba(255,255,255,.16);padding-left:24px}.today-next .label{font-size:.72rem;text-transform:uppercase;letter-spacing:.12em;color:#9ed7f5;font-weight:900}.today-next b{display:block;font-size:1.22rem;margin-top:3px}.today-next span{color:#dbeaf4;font-size:.9rem}
@@ -119,14 +131,14 @@
     @media(max-width:920px){
       .navlinks{position:absolute;left:18px;right:18px;top:88px;background:white;border:1px solid var(--line);border-radius:18px;box-shadow:var(--shadow);padding:12px;display:none;flex-direction:column;align-items:stretch}.navlinks.open{display:flex}.menu{display:block}.brand-copy span{display:none}
       .hero{min-height:620px;background-position:center}.quick{grid-template-columns:1fr 1fr}.quick a:nth-child(2){border-right:0}.quick a:nth-child(-n+2){border-bottom:1px solid var(--line)}
-      .notice-grid{grid-template-columns:1fr}.news-grid{grid-template-columns:1fr 1fr}.schedule-wrap,.calendar-layout,.location{grid-template-columns:1fr}.schedule-summary{position:static}.periods{grid-template-columns:repeat(2,1fr)}
-      .today-card{grid-template-columns:1fr 1.4fr}.today-badge{grid-column:1/3;justify-self:start}.footer-grid{grid-template-columns:1fr 1fr}.footer-grid>div:last-child{grid-column:auto}
+      notice-grid{grid-template-columns:1fr}.news-grid{grid-template-columns:1fr 1fr}.schedule-wrap,.calendar-layout,.location{grid-template-columns:1fr}.schedule-summary{position:static}.periods{grid-template-columns:repeat(2,1fr)}
+.today-card{grid-template-columns:1fr 1.4fr}.today-badge{grid-column:1/3;justify-self:start}.footer-grid{grid-template-columns:1fr 1fr}.footer-grid>div:last-child{grid-column:auto}
     }
     @media(max-width:620px){
       .container{width:min(100% - 24px,var(--max))}.topbar .container{font-size:.76rem}.topbar .container span:first-child{display:none}
       nav{min-height:76px}.brand img{width:84px;height:59px}.brand-copy strong{font-size:.95rem}.hero{min-height:590px;background-position:58% center}.hero-inner{padding:72px 0 112px}.hero p{font-size:1rem}.hero-strip{bottom:-94px}.quick a{padding:17px 14px;gap:9px}.quick-icon{width:38px;height:38px}.quick small{font-size:.72rem}
       main{padding-top:145px}.section{padding:54px 0}.section-head{display:block}.section-head p{margin-top:13px}.today-card{grid-template-columns:1fr;padding:20px;gap:15px}.today-next{border-left:0;border-top:1px solid rgba(255,255,255,.16);padding-left:0;padding-top:14px}.today-badge{grid-column:auto}
-      .news-grid{grid-template-columns:1fr}.news-media{aspect-ratio:1/1}.periods{grid-template-columns:1fr 1fr}.period{padding:15px}.stat-grid{grid-template-columns:1fr 1fr}.calendar-actions .btn{width:100%}.footer-grid{grid-template-columns:1fr}.modal{padding:12px}.modal-content{padding:24px 22px 28px}.modal-content h3{font-size:1.45rem}
+      news-grid{grid-template-columns:1fr}.news-media{aspect-ratio:1/1}.periods{grid-template-columns:1fr 1fr}.period{padding:15px}.stat-grid{grid-template-columns:1fr 1fr}.calendar-actions .btn{width:100%}.footer-grid{grid-template-columns:1fr}.modal{padding:12px}.modal-content{padding:24px 22px 28px}.modal-content h3{font-size:1.45rem}
     }
   </style>
   <script type="application/ld+json">
@@ -140,7 +152,7 @@
   </script>
 </head>
 <body>
-  <div class="topbar"><div class="container"><span>Escola Municipal • Castro, Paraná</span><span>Portal oficial do CAIC &nbsp;•&nbsp; <a href="https://painel.caic.com.br">Acessar painel</a></span></div></div>
+  <div class="topbar"><div class="container"><span>Festa da Primavera • Sábado, 19/09 • 14h</span><span>Portal oficial do CAIC &nbsp;•&nbsp; <a href="https://painel.caic.com.br">CAIC AO VIVO</a></span></div></div>
 
   <header>
     <nav class="container">
@@ -157,21 +169,21 @@
 
   <section class="hero" id="inicio">
     <div class="container hero-inner">
-      <span class="eyebrow"><i></i> Educação pública em tempo integral</span>
-      <h1>Um espaço para aprender, conviver e crescer.</h1>
-      <p>Bem-vindo ao portal da Escola Municipal Professor José Antonio Flygare Telles — CAIC. Informações da escola, calendário, horários, avisos e novidades em um só lugar.</p>
-      <div class="cta"><a class="btn primary" href="#avisos">Ver avisos</a><a class="btn light" href="#calendario">Calendário 2026</a></div>
+      <span class="eyebrow"><i></i> Festa da Primavera • 19/09 às 14h</span>
+      <h1>Festa da Primavera no CAIC 🌸</h1>
+      <p>Neste sábado, 19/09, às 14h, o CAIC recebe as famílias para a nossa Festa da Primavera. As crianças estão preparando as apresentações há meses — e a festa acontece mesmo com chuva, com organização dos espaços cobertos da escola.</p>
+      <div class="cta"><a class="btn primary" href="#avisos">Avisos da festa</a><a class="btn light" href="#noticias">Ver programação</a></div>
     </div>
     <div class="hero-strip"><div class="container quick">
       <a href="#horarios"><span class="quick-icon">01</span><span><b>Horários</b><small>Rotina escolar integral</small></span></a>
       <a href="#calendario"><span class="quick-icon">02</span><span><b>Calendário</b><small>Datas do ano letivo</small></span></a>
       <a href="#localizacao"><span class="quick-icon">03</span><span><b>Localização</b><small>Como chegar ao CAIC</small></span></a>
-      <a href="https://painel.caic.com.br"><span class="quick-icon">04</span><span><b>Painel</b><small>Acesso ao sistema</small></span></a>
+      <a href="https://painel.caic.com.br"><span class="quick-icon">04</span><span><b>CAIC AO VIVO</b><small>Acompanhe o CAIC em tempo real</small></span></a>
     </div></div>
   </section>
 
   <main>
-    <section class="section" id="avisos"><div class="container">
+<section class="section" id="avisos"><div class="container">
       <div class="today-card" aria-live="polite">
         <div class="today-date"><small>Hoje no CAIC</small><strong id="todayDate">Carregando data…</strong></div>
         <div class="today-next"><span class="label">Próximo destaque</span><b id="nextEventTitle">Carregando…</b><span id="nextEventDesc"></span></div>
@@ -250,7 +262,7 @@
     <div class="footer-grid">
       <div class="footer-logo"><img src="assets/logo-caic.png" alt="Logo CAIC"><div><strong>Escola Municipal Professor José Antonio Flygare Telles</strong><span>CAIC • Castro/PR</span></div></div>
       <div><div class="footer-title">Portal</div><div class="footer-links"><a href="#avisos">Avisos</a><a href="#noticias">Notícias</a><a href="#horarios">Horários</a><a href="#calendario">Calendário</a></div></div>
-      <div><div class="footer-title">Acesso</div><div class="footer-links"><a href="https://painel.caic.com.br">CAIC AO VIVO ↗</a><a href="docs/calendario-escolar-2026.pdf" target="_blank">Calendário 2026 ↗</a><a href="#localizacao">Localização</a></div></div>
+      <div><div class="footer-title">Acesso</div><div class="footer-links"><a href="https://painel.caic.com.br">CAIC AO VIVO ↗</a><a href="docs/calendario-escolar-2026.pdf" target="_blank">Ver programação ↗</a><a href="#localizacao">Localização</a></div></div>
       <div><div class="footer-title">Endereço</div><div class="footer-contact">Rua Salvador Natucci, 110<br>Jardim das Araucárias II<br>Castro — Paraná</div></div>
     </div>
     <div class="copyright"><span>© 2026 CAIC — Escola Municipal Professor José Antonio Flygare Telles.</span><span>Portal oficial • caic.com.br</span></div>
