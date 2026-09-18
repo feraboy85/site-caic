@@ -1,35 +1,23 @@
 # CAIC — Site V2
 
-Versão atualizada do portal público do CAIC para `https://caic.com.br`.
+Portal público do CAIC — Escola Municipal Professor José Antonio Flygare Telles, Castro/PR.
 
-## O que mudou
-- Logo maior no cabeçalho e destaque principal um pouco mais claro.
-- Bloco dinâmico **Hoje no CAIC** com o próximo evento.
-- Avisos atuais: Prova Paraná e Festa da Primavera, com comunicados completos em modal.
-- Seção de notícias com 6 publicações/imagens recentes.
-- Calendário com lista automática das próximas datas.
-- Rodapé ampliado, menu mobile melhorado e ajustes de SEO/canonical.
-- Otimização das imagens de notícias em WebP.
+Site oficial: https://caic.com.br
 
 ## Publicação
-Suba **todo o conteúdo desta pasta na raiz do repositório do site**, preservando as pastas `assets/` e `docs/`.
-O arquivo `index.html` deve permanecer na raiz.
+O projeto é publicado automaticamente pelo Cloudflare a partir da branch `main`.
 
-O domínio principal continua `caic.com.br` e `www.caic.com.br` deve redirecionar para o domínio principal.
+## Estrutura principal
+- `index.html` — página pública principal
+- `painel.html` — acesso ao CAIC AO VIVO
+- `visor.html` — atalho legado
+- `assets/` — imagens e recursos visuais
+- `docs/` — documentos públicos
 
-## V2.2
-- Adicionado destaque visual da Festa da Primavera na página inicial.
-- Mantido o botão “CAIC AO VIVO”.
-
-## V2.3 — Tema Festa da Primavera
-- A foto do palco da Festa da Primavera substitui a foto aérea no destaque principal.
-- A Festa da Primavera passa a ser o tema principal da página inicial.
-- Destaque para 19/09 às 14h e aviso de realização mesmo com chuva.
-- Removido o bloco duplicado de destaque da festa.
-- Mantido “CAIC AO VIVO” e todas as demais seções.
-
-## V2.3.1 — Festa da Primavera como tema principal
-- A foto enviada da decoração da Festa da Primavera substitui a foto aérea no hero.
-- Criada uma versão panorâmica otimizada da própria foto para desktop, preservando a imagem completa à direita.
-- Festa da Primavera passa a ser o destaque principal do portal.
-- “CAIC AO VIVO” padronizado no cabeçalho e nos atalhos.
+## Atualizações recentes
+- Festa da Primavera em destaque na página inicial.
+- Avisos e notícias responsivos no mobile.
+- CAIC AO VIVO disponível em `/painel`.
+- Aviso de suspensão de futsal e ballet em 18/09.
+- Galeria com bastidores e preparação dos ambientes para a Festa da Primavera.
+- Correção dos arquivos WEBP da galeria da Festa da Primavera.
