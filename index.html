@@ -101,6 +101,24 @@
     .notice .date{margin-top:18px;font-size:.82rem;font-weight:800;color:#718499}.notice.featured .date{color:#dcebf5}
     .text-link{border:0;background:none;padding:0;margin-top:15px;color:var(--blue);font-weight:900;cursor:pointer}.notice.featured .text-link{color:#fff}.text-link:hover{text-decoration:underline}
 
+
+    .activity-alert{margin:0 0 22px;background:linear-gradient(120deg,#fff7db,#fff);border:2px solid rgba(255,201,40,.55);border-radius:22px;padding:22px 24px;display:grid;grid-template-columns:auto 1fr;gap:18px;align-items:start;box-shadow:0 8px 24px rgba(8,39,69,.06)}
+    .activity-alert-icon{width:50px;height:50px;border-radius:16px;background:#fff0b8;display:grid;place-items:center;font-size:1.6rem}
+    .activity-alert .tag{display:inline-flex;background:#fff0b8;color:#775c00;font-size:.72rem;font-weight:900;padding:6px 9px;border-radius:999px;text-transform:uppercase;letter-spacing:.06em}
+    .activity-alert h3{margin:10px 0 6px;color:var(--navy);font-size:1.35rem;line-height:1.18}
+    .activity-alert p{margin:0;color:var(--muted)}
+    .activity-alert .date{margin-top:12px;color:#718499;font-size:.82rem;font-weight:800}
+
+    .prep-feature{margin:0 0 30px;background:linear-gradient(135deg,#fff8fc,#f5fbff);border:1px solid var(--line);border-radius:26px;padding:24px;box-shadow:0 10px 30px rgba(8,39,69,.06)}
+    .prep-copy{max-width:760px;margin-bottom:18px}
+    .prep-copy h3{font-size:clamp(1.55rem,3vw,2.25rem);line-height:1.08;letter-spacing:-.035em;color:var(--navy);margin:7px 0 8px}
+    .prep-copy p{color:var(--muted);margin:0}
+    .prep-gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+    .prep-photo{aspect-ratio:4/5;border-radius:17px;overflow:hidden;position:relative;cursor:pointer;background:#eaf0f5}
+    .prep-photo img{width:100%;height:100%;object-fit:cover;transition:transform .25s ease}
+    .prep-photo:hover img{transform:scale(1.035)}
+    .prep-photo:after{content:"Ampliar";position:absolute;right:9px;bottom:9px;background:rgba(6,31,55,.78);color:#fff;padding:5px 8px;border-radius:999px;font-size:.68rem;font-weight:800;backdrop-filter:blur(8px)}
+
     .news-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
     .news{background:#fff;border-radius:var(--radius);overflow:hidden;border:1px solid var(--line);box-shadow:0 10px 30px rgba(8,39,69,.06);display:flex;flex-direction:column;min-width:0;transition:transform .18s ease,box-shadow .18s ease}
     .news:hover{transform:translateY(-3px);box-shadow:0 17px 38px rgba(8,39,69,.11)}
@@ -140,6 +158,9 @@
       main{padding-top:145px}.section{padding:54px 0}.section-head{display:block}.section-head p{margin-top:13px}.today-card{grid-template-columns:1fr;padding:20px;gap:15px}.today-next{border-left:0;border-top:1px solid rgba(255,255,255,.16);padding-left:0;padding-top:14px}.today-badge{grid-column:auto}
       .news-grid{grid-template-columns:1fr}.news-media{aspect-ratio:1/1}.periods{grid-template-columns:1fr 1fr}.period{padding:15px}.stat-grid{grid-template-columns:1fr 1fr}.calendar-actions .btn{width:100%}.footer-grid{grid-template-columns:1fr}.modal{padding:12px}.modal-content{padding:24px 22px 28px}.modal-content h3{font-size:1.45rem}
     }
+
+    @media(max-width:920px){.prep-gallery{grid-template-columns:repeat(2,1fr)}}
+    @media(max-width:620px){.activity-alert{grid-template-columns:1fr;padding:20px}.activity-alert-icon{width:44px;height:44px}.prep-feature{padding:18px}.prep-gallery{grid-template-columns:1fr}.prep-photo{aspect-ratio:4/3}}
   </style>
   <script type="application/ld+json">
   {
@@ -191,6 +212,17 @@
       </div>
 
       <div class="section-head"><div><div class="kicker">Fique por dentro</div><h2>Avisos importantes</h2></div><p>Informações rápidas para famílias, estudantes e comunidade escolar.</p></div>
+
+        <article class="activity-alert">
+          <div class="activity-alert-icon">📣</div>
+          <div>
+            <span class="tag">18/09 • Hoje à tarde</span>
+            <h3>Futsal e ballet não serão realizados hoje</h3>
+            <p><strong>Futsal:</strong> hoje não haverá atividade, pois o ginásio está preparado para a Festa da Primavera. <strong>Ballet:</strong> hoje também não haverá aula.</p>
+            <div class="date">Direção • 18/09/2026</div>
+          </div>
+        </article>
+
       <div class="notice-grid">
         <article class="notice urgent"><span class="tag">🧡 18/09 • Prova Paraná</span><h3>Pedimos que os estudantes não faltem</h3><p>A Prova Paraná será realizada nesta sexta-feira. A presença dos estudantes é muito importante.</p><button class="text-link" data-notice="prova-parana">Ler comunicado completo →</button><div class="date">Coordenação • 17/09/2026</div></article>
         <article class="notice featured"><span class="tag">🌸 19/09 • 14h</span><h3>Festa da Primavera confirmada</h3><p>A festa será realizada neste sábado e está confirmada mesmo em caso de chuva. A escola está organizando os espaços cobertos para receber as famílias.</p><button class="text-link" data-notice="festa-chuva">Ler comunicado do diretor →</button><div class="date">Direção • setembro de 2026</div></article>
@@ -200,6 +232,20 @@
 
     <section class="section alt" id="noticias"><div class="container">
       <div class="section-head"><div><div class="kicker">Comunidade escolar</div><h2>Notícias e novidades</h2></div><p>Informações recentes do CAIC, eventos, ações e comunicados para as famílias.</p></div>
+
+      <div class="prep-feature">
+        <div class="prep-copy">
+          <div class="kicker">Preparativos</div>
+          <h3>Bastidores da Festa da Primavera 🌸🦋</h3>
+          <p>O CAIC já está ganhando as cores da festa. Os ambientes estão sendo preparados para receber as famílias neste sábado. Confira alguns registros da decoração e da organização dos espaços.</p>
+        </div>
+        <div class="prep-gallery">
+          <div class="prep-photo" data-image="assets/noticias/ambiente-festa-01.webp" data-alt="Decoração dos ambientes para a Festa da Primavera"><img loading="lazy" src="assets/noticias/ambiente-festa-01.webp" alt="Flores decorativas nos ambientes da Festa da Primavera"></div>
+          <div class="prep-photo" data-image="assets/noticias/ambiente-festa-02.webp" data-alt="Corredor decorado para a Festa da Primavera"><img loading="lazy" src="assets/noticias/ambiente-festa-02.webp" alt="Corredor do CAIC decorado com flores e borboletas"></div>
+          <div class="prep-photo" data-image="assets/noticias/ambiente-festa-03.webp" data-alt="Entrada do ginásio preparada para a Festa da Primavera"><img loading="lazy" src="assets/noticias/ambiente-festa-03.webp" alt="Entrada do ginásio preparada e decorada para a Festa da Primavera"></div>
+        </div>
+      </div>
+
       <div class="news-grid">
         <article class="news">
           <div class="news-media" data-image="assets/noticias/roupa-festa.webp" data-alt="Com que roupa eu vou? A que você preferir. Festa da Primavera"><img loading="lazy" src="assets/noticias/roupa-festa.webp" alt="Com que roupa eu vou? A que você preferir. Festa da Primavera"></div>
