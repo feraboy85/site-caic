@@ -1,0 +1,82 @@
+name: Ajustar CAIC AO VIVO para /painel
+
+on:
+  push:
+    paths:
+      - '.github/workflows/fix-painel-path.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  fix:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Baixar repositório
+        uses: actions/checkout@v4
+
+      - name: Ajustar links e criar /painel
+        shell: bash
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+
+          index = Path('index.html')
+          text = index.read_text(encoding='utf-8')
+          for old in (
+              'https://painel.caic.com.br/visor.html',
+              'https://painel.caic.com.br',
+              'https://sistema-caic.feraboy85.workers.dev/visor.html',
+              'https://sistema-caic.feraboy85.workers.dev/visor',
+          ):
+              text = text.replace(old, '/painel')
+          index.write_text(text, encoding='utf-8')
+
+          painel = '''<!doctype html>
+          <html lang="pt-BR">
+          <head>
+            <meta charset="utf-8">
+            <meta name="viewport" content="width=device-width,initial-scale=1">
+            <meta name="theme-color" content="#082745">
+            <meta name="robots" content="noindex,nofollow">
+            <title>CAIC AO VIVO</title>
+            <style>
+              html,body{margin:0;width:100%;height:100%;overflow:hidden;background:#071f37;font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif}
+              iframe{display:block;width:100%;height:100%;border:0;background:white}
+              .fallback{position:fixed;right:12px;bottom:12px;z-index:3;background:#082745;color:white;padding:10px 14px;border-radius:12px;text-decoration:none;font-weight:800;box-shadow:0 8px 24px rgba(0,0,0,.25)}
+            </style>
+          </head>
+          <body>
+            <iframe src="https://sistema-caic.feraboy85.workers.dev/visor" title="CAIC AO VIVO" allowfullscreen></iframe>
+            <a class="fallback" href="https://sistema-caic.feraboy85.workers.dev/visor" target="_blank" rel="noopener">Abrir diretamente ↗</a>
+          </body>
+          </html>'''
+          Path('painel.html').write_text(painel, encoding='utf-8')
+
+          visor = '''<!doctype html>
+          <html lang="pt-BR">
+          <head>
+            <meta charset="utf-8">
+            <meta name="viewport" content="width=device-width,initial-scale=1">
+            <meta http-equiv="refresh" content="0;url=/painel">
+            <link rel="canonical" href="https://caic.com.br/painel">
+            <title>CAIC AO VIVO</title>
+            <script>location.replace('/painel');</script>
+          </head>
+          <body><p><a href="/painel">Abrir CAIC AO VIVO</a></p></body>
+          </html>'''
+          Path('visor.html').write_text(visor, encoding='utf-8')
+          PY
+
+      - name: Publicar ajustes
+        shell: bash
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add index.html painel.html visor.html
+          if git diff --cached --quiet; then
+            echo "Nenhuma alteração necessária."
+            exit 0
+          fi
+          git commit -m "Usa caic.com.br/painel para CAIC AO VIVO"
+          git push
