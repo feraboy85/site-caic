@@ -1,59 +1,24 @@
-name: Atualizar destaque e avisos de 19-09
+name: Atualizar destaque e avisos 1909
 
 on:
   push:
     paths:
-      - '.github/workflows/update-site-1909-once.yml'
+      - .github/workflows/update-site-1909-once.yml
 
 permissions:
   contents: write
 
 jobs:
-  atualizar:
+  update-site:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - name: Atualizar index
-        shell: bash
+      - name: Preparar patch
+        run: echo 'ZnJvbSBwYXRobGliIGltcG9ydCBQYXRoCmltcG9ydCByZQpwPVBhdGgoImluZGV4Lmh0bWwiKQpzPXAucmVhZF90ZXh0KGVuY29kaW5nPSJ1dGYtOCIpCgpjc3M9cicnJwogICAgLmhlcm8tcHJvbW97cG9zaXRpb246YWJzb2x1dGU7aW5zZXQ6MDt6LWluZGV4OjM7b3BhY2l0eTowO3BvaW50ZXItZXZlbnRzOm5vbmU7dHJhbnNpdGlvbjpvcGFjaXR5IC43NXMgZWFzZTtvdmVyZmxvdzpoaWRkZW47YmFja2dyb3VuZDojZmZmfQogICAgLmhlcm8tcHJvbW86OmJlZm9yZXtjb250ZW50OiIiO3Bvc2l0aW9uOmFic29sdXRlO2luc2V0Oi0yOHB4O2JhY2tncm91bmQ6dXJsKCdhc3NldHMvaGVyby1lLWhvamUud2VicCcpIGNlbnRlci9jb3ZlciBuby1yZXBlYXQ7ZmlsdGVyOmJsdXIoMjRweCkgYnJpZ2h0bmVzcyguODIpO3RyYW5zZm9ybTpzY2FsZSgxLjA4KX0KICAgIC5oZXJvLXByb21vOjphZnRlcntjb250ZW50OiIiO3Bvc2l0aW9uOmFic29sdXRlO2luc2V0OjA7YmFja2dyb3VuZDp1cmwoJ2Fzc2V0cy9oZXJvLWUtaG9qZS53ZWJwJykgY2VudGVyL2NvbnRhaW4gbm8tcmVwZWF0fQogICAgLmhlcm8ucHJvbW8tYWN0aXZlIC5oZXJvLXByb21ve29wYWNpdHk6MX0KICAgIEBtZWRpYShtYXgtd2lkdGg6NjIwcHgpey5oZXJvLXByb21vOjpiZWZvcmV7ZGlzcGxheTpub25lfS5oZXJvLXByb21vOjphZnRlcntiYWNrZ3JvdW5kLXNpemU6Y292ZXI7YmFja2dyb3VuZC1wb3NpdGlvbjpjZW50ZXJ9fQonJycKaWYgIi5oZXJvLXByb21veyIgbm90IGluIHM6CiAgICBhPSIgICAgLmhlcm8gLmNvbnRhaW5lcntwb3NpdGlvbjpyZWxhdGl2ZTt6LWluZGV4OjF9XG4iCiAgICBpZiBhIG5vdCBpbiBzOiByYWlzZSBTeXN0ZW1FeGl0KCJjc3MgYW5jaG9yIG1pc3NpbmciKQogICAgcz1zLnJlcGxhY2UoYSxhKyJcbiIrY3NzKyJcbiIsMSkKCmlmICdjbGFzcz0iaGVyby1wcm9tbyInIG5vdCBpbiBzOgogICAgbT1yZS5zZWFyY2gocicoPHNlY3Rpb25bXj5dKmNsYXNzPSJbXiJdKlxiaGVyb1xiW14iXSoiW14+XSo+KScscykKICAgIGlmIG5vdCBtOiByYWlzZSBTeXN0ZW1FeGl0KCJoZXJvIG1pc3NpbmciKQogICAgcz1zWzptLmVuZCgpXSsnXG4gICAgPGRpdiBjbGFzcz0iaGVyby1wcm9tbyIgYXJpYS1oaWRkZW49InRydWUiPjwvZGl2Picrc1ttLmVuZCgpOl0KCmpzPXInJycgICAgLy8gQWx0ZXJuw6JuY2lhIGRvIGRlc3RhcXVlIHByaW5jaXBhbDogY2FwYSBkYSBmZXN0YSA8LT4gYXJ0ZSAiw4kgSE9KRSEiCiAgICBjb25zdCBoZXJvRWw9ZG9jdW1lbnQucXVlcnlTZWxlY3RvcignLmhlcm8nKTsKICAgIGlmKGhlcm9FbCl7bGV0IHByb21vT249ZmFsc2U7c2V0SW50ZXJ2YWwoKCk9Pntwcm9tb09uPSFwcm9tb09uO2hlcm9FbC5jbGFzc0xpc3QudG9nZ2xlKCdwcm9tby1hY3RpdmUnLHByb21vT24pfSw4MDAwKX0KJycnCmlmICJBbHRlcm7Dom5jaWEgZG8gZGVzdGFxdWUgcHJpbmNpcGFsIiBub3QgaW4gczoKICAgIGE9IiAgICBjb25zdCBtZW51QnRuPWRvY3VtZW50LnF1ZXJ5U2VsZWN0b3IoJy5tZW51Jyk7IgogICAgaWYgYSBub3QgaW4gczogcmFpc2UgU3lzdGVtRXhpdCgianMgYW5jaG9yIG1pc3NpbmciKQogICAgcz1zLnJlcGxhY2UoYSxqcysiXG4iK2EsMSkKCnM9cmUuc3ViKHInXHMqPGFydGljbGUgY2xhc3M9ImFjdGl2aXR5LWFsZXJ0Ij4uKj88L2FydGljbGU+XHMqJywnXG4nLHMsY291bnQ9MSxmbGFncz1yZS5TKQoKZ3JpZD0nJycgICAgICA8ZGl2IGNsYXNzPSJub3RpY2UtZ3JpZCI+CiAgICAgICAgPGFydGljbGUgY2xhc3M9Im5vdGljZSBmZWF0dXJlZCI+PHNwYW4gY2xhc3M9InRhZyI+8J+MuCAxOS8wOSDigKIgMTRoPC9zcGFuPjxoMz5GZXN0YSBkYSBQcmltYXZlcmEgY29uZmlybWFkYTwvaDM+PHA+QSBmZXN0YSBzZXLDoSByZWFsaXphZGEgbmVzdGUgc8OhYmFkbyBlIGVzdMOhIGNvbmZpcm1hZGEgbWVzbW8gZW0gY2FzbyBkZSBjaHV2YS4gQSBlc2NvbGEgZXN0w6Egb3JnYW5pemFuZG8gb3MgZXNwYcOnb3MgY29iZXJ0b3MgcGFyYSByZWNlYmVyIGFzIGZhbcOtbGlhcy48L3A+PGJ1dHRvbiBjbGFzcz0idGV4dC1saW5rIiBkYXRhLW5vdGljZT0iZmVzdGEtY2h1dmEiPkxlciBjb211bmljYWRvIGRvIGRpcmV0b3Ig4oaSPC9idXR0b24+PGRpdiBjbGFzcz0iZGF0ZSI+RGlyZcOnw6NvIOKAoiBzZXRlbWJybyBkZSAyMDI2PC9kaXY+PC9hcnRpY2xlPgogICAgICA8L2Rpdj4nJycKcyxuPXJlLnN1Ym4ocicgICAgICA8ZGl2IGNsYXNzPSJub3RpY2UtZ3JpZCI+Lio/ICAgICAgPC9kaXY+XG4gICAgPC9kaXY+PC9zZWN0aW9uPicsZ3JpZCsnXG4gICAgPC9kaXY+PC9zZWN0aW9uPicscyxjb3VudD0xLGZsYWdzPXJlLlMpCmlmIG4hPTE6IHJhaXNlIFN5c3RlbUV4aXQoZiJub3RpY2UgZ3JpZCByZXBsYWNlIGZhaWxlZDoge259IikKCnM9cy5yZXBsYWNlKCIubm90aWNlLWdyaWR7ZGlzcGxheTpncmlkO2dyaWQtdGVtcGxhdGUtY29sdW1uczoxLjA4ZnIgMWZyIDFmcjtnYXA6MThweH0iLCIubm90aWNlLWdyaWR7ZGlzcGxheTpncmlkO2dyaWQtdGVtcGxhdGUtY29sdW1uczoxZnI7Z2FwOjE4cHh9IikKcC53cml0ZV90ZXh0KHMsZW5jb2Rpbmc9InV0Zi04IikK' | base64 -d > /tmp/patch.py
+      - name: Aplicar patch
+        run: python3 /tmp/patch.py
+      - name: Salvar alteracoes
         run: |
-          python3 - <<'PY'
-          from pathlib import Path
-          import re
-          p = Path('index.html')
-          s = p.read_text(encoding='utf-8')
-          promo_css = r'''
-              .hero-promo{position:absolute;inset:0;z-index:3;opacity:0;pointer-events:none;transition:opacity .75s ease;overflow:hidden;background:#fff}
-              .hero-promo::before{content:"";position:absolute;inset:-28px;background:url('assets/hero-e-hoje.webp') center/cover no-repeat;filter:blur(24px) brightness(.82);transform:scale(1.08)}
-              .hero-promo::after{content:"";position:absolute;inset:0;background:url('assets/hero-e-hoje.webp') center/contain no-repeat}
-              .hero.promo-active .hero-promo{opacity:1}
-              @media(max-width:620px){.hero-promo::before{display:none}.hero-promo::after{background-size:cover;background-position:center}}
-          '''
-          if '.hero-promo{' not in s:
-              anchor='    .hero .container{position:relative;z-index:1}\n'
-              if anchor not in s: raise SystemExit('Âncora CSS hero não encontrada')
-              s=s.replace(anchor,anchor+'\n'+promo_css+'\n',1)
-          if 'class="hero-promo"' not in s:
-              m=re.search(r'(<section[^>]*class="[^"]*\bhero\b[^"]*"[^>]*>)',s)
-              if not m: raise SystemExit('Seção hero não encontrada')
-              s=s[:m.end()]+'\n    <div class="hero-promo" aria-hidden="true"></div>'+s[m.end():]
-          promo_js = r'''
-              // Alternância do destaque principal: capa da festa <-> arte "É HOJE!"
-              const heroEl=document.querySelector('.hero');
-              if(heroEl){let promoOn=false;setInterval(()=>{promoOn=!promoOn;heroEl.classList.toggle('promo-active',promoOn)},8000)}
-          '''
-          if 'Alternância do destaque principal' not in s:
-              anchor='    const menuBtn=document.querySelector(\'.menu\');'
-              if anchor not in s: raise SystemExit('Script principal não encontrado')
-              s=s.replace(anchor,promo_js+'\n'+anchor,1)
-          s=re.sub(r'\s*<article class="activity-alert">.*?</article>\s*','\n',s,count=1,flags=re.S)
-          notice_grid='''      <div class="notice-grid">
-        <article class="notice featured"><span class="tag">🌸 19/09 • 14h</span><h3>Festa da Primavera confirmada</h3><p>A festa será realizada neste sábado e está confirmada mesmo em caso de chuva. A escola está organizando os espaços cobertos para receber as famílias.</p><button class="text-link" data-notice="festa-chuva">Ler comunicado do diretor →</button><div class="date">Direção • setembro de 2026</div></article>
-      </div>'''
-          s,n=re.subn(r'      <div class="notice-grid">.*?      </div>\n    </div></section>',notice_grid+'\n    </div></section>',s,count=1,flags=re.S)
-          if n!=1: raise SystemExit(f'Não foi possível atualizar avisos: {n}')
-          s=s.replace('.notice-grid{display:grid;grid-template-columns:1.08fr 1fr 1fr;gap:18px}','.notice-grid{display:grid;grid-template-columns:1fr;gap:18px}')
-          p.write_text(s,encoding='utf-8')
-          PY
           rm -f .github/workflows/update-site-1909-once.yml
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
