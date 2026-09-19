@@ -1,8 +1,47 @@
-name: noop
+name: Corrigir imagem destaque É HOJE
+
 on:
-  workflow_dispatch:
+  push:
+    paths:
+      - .github/workflows/update-site-1909-once.yml
+
+permissions:
+  contents: write
+
 jobs:
-  noop:
+  corrigir:
     runs-on: ubuntu-latest
     steps:
-      - run: echo ok
+      - uses: actions/checkout@v4
+
+      - name: Restaurar imagem correta do destaque
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          python3 - <<'PY'
+          import json, os, urllib.request, base64, pathlib
+          url='https://api.github.com/repos/feraboy85/site-caic/git/blobs/1b657414b5b0d9836748675e866796b4d50bf925'
+          req=urllib.request.Request(url, headers={'Authorization':'Bearer '+os.environ['GH_TOKEN'],'Accept':'application/vnd.github+json'})
+          data=json.load(urllib.request.urlopen(req))
+          raw=base64.b64decode(data['content'])
+          pathlib.Path('assets').mkdir(exist_ok=True)
+          pathlib.Path('assets/hero-e-hoje.webp').write_bytes(raw)
+          PY
+
+      - name: Ajustar exibição da arte no hero
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          p=Path('index.html')
+          s=p.read_text(encoding='utf-8')
+          s=s.replace("@media(max-width:620px){.hero-promo::before{display:none}.hero-promo::after{background-size:cover;background-position:center}}", "@media(max-width:620px){.hero-promo::before{display:block;filter:blur(18px) brightness(.82)}.hero-promo::after{background-size:contain;background-position:center;background-repeat:no-repeat}}")
+          p.write_text(s, encoding='utf-8')
+          PY
+
+      - name: Salvar correção
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add assets/hero-e-hoje.webp index.html
+          git commit -m "Corrige arte É HOJE no destaque principal"
+          git push
