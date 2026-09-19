@@ -1,0 +1,20 @@
+name: Atualizar destaque e avisos de 19-09
+
+on:
+  push:
+    paths:
+      - '.github/workflows/update-site-1909-once.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  atualizar:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Atualizar site
+        shell: bash
+        run: |
+          mkdir -p assets
+          echo 'UklGRsAJBA...TRUNCATED...'
