@@ -13,8 +13,50 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - name: Atualizar site
+      - name: Atualizar index
         shell: bash
         run: |
-          mkdir -p assets
-          echo 'UklGRsAJBA...TRUNCATED...'
+          python3 - <<'PY'
+          from pathlib import Path
+          import re
+          p = Path('index.html')
+          s = p.read_text(encoding='utf-8')
+          promo_css = r'''
+              .hero-promo{position:absolute;inset:0;z-index:3;opacity:0;pointer-events:none;transition:opacity .75s ease;overflow:hidden;background:#fff}
+              .hero-promo::before{content:"";position:absolute;inset:-28px;background:url('assets/hero-e-hoje.webp') center/cover no-repeat;filter:blur(24px) brightness(.82);transform:scale(1.08)}
+              .hero-promo::after{content:"";position:absolute;inset:0;background:url('assets/hero-e-hoje.webp') center/contain no-repeat}
+              .hero.promo-active .hero-promo{opacity:1}
+              @media(max-width:620px){.hero-promo::before{display:none}.hero-promo::after{background-size:cover;background-position:center}}
+          '''
+          if '.hero-promo{' not in s:
+              anchor='    .hero .container{position:relative;z-index:1}\n'
+              if anchor not in s: raise SystemExit('Âncora CSS hero não encontrada')
+              s=s.replace(anchor,anchor+'\n'+promo_css+'\n',1)
+          if 'class="hero-promo"' not in s:
+              m=re.search(r'(<section[^>]*class="[^"]*\bhero\b[^"]*"[^>]*>)',s)
+              if not m: raise SystemExit('Seção hero não encontrada')
+              s=s[:m.end()]+'\n    <div class="hero-promo" aria-hidden="true"></div>'+s[m.end():]
+          promo_js = r'''
+              // Alternância do destaque principal: capa da festa <-> arte "É HOJE!"
+              const heroEl=document.querySelector('.hero');
+              if(heroEl){let promoOn=false;setInterval(()=>{promoOn=!promoOn;heroEl.classList.toggle('promo-active',promoOn)},8000)}
+          '''
+          if 'Alternância do destaque principal' not in s:
+              anchor='    const menuBtn=document.querySelector(\'.menu\');'
+              if anchor not in s: raise SystemExit('Script principal não encontrado')
+              s=s.replace(anchor,promo_js+'\n'+anchor,1)
+          s=re.sub(r'\s*<article class="activity-alert">.*?</article>\s*','\n',s,count=1,flags=re.S)
+          notice_grid='''      <div class="notice-grid">
+        <article class="notice featured"><span class="tag">🌸 19/09 • 14h</span><h3>Festa da Primavera confirmada</h3><p>A festa será realizada neste sábado e está confirmada mesmo em caso de chuva. A escola está organizando os espaços cobertos para receber as famílias.</p><button class="text-link" data-notice="festa-chuva">Ler comunicado do diretor →</button><div class="date">Direção • setembro de 2026</div></article>
+      </div>'''
+          s,n=re.subn(r'      <div class="notice-grid">.*?      </div>\n    </div></section>',notice_grid+'\n    </div></section>',s,count=1,flags=re.S)
+          if n!=1: raise SystemExit(f'Não foi possível atualizar avisos: {n}')
+          s=s.replace('.notice-grid{display:grid;grid-template-columns:1.08fr 1fr 1fr;gap:18px}','.notice-grid{display:grid;grid-template-columns:1fr;gap:18px}')
+          p.write_text(s,encoding='utf-8')
+          PY
+          rm -f .github/workflows/update-site-1909-once.yml
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add index.html .github/workflows/update-site-1909-once.yml
+          git commit -m "Alterna hero com É Hoje e mantém só aviso da festa"
+          git push
