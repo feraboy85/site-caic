@@ -1,8 +1,14 @@
 {
-  "version": "1.0.0",
+  "version": "1.0.1",
   "released": "2026-10-01",
-  "editor": "/admin/site.html",
+  "editor": "/editor",
   "cms": "Supabase",
+  "fixes": [
+    "visual editor property panel restored",
+    "school editor syntax corrected",
+    "nested item creation supported in UI",
+    "section render errors shown inside the properties panel"
+  ],
   "features": [
     "visual-preview",
     "draft-publish",
