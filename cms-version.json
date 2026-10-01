@@ -1,0 +1,18 @@
+{
+  "version": "1.0.0",
+  "released": "2026-10-01",
+  "editor": "/admin/site.html",
+  "cms": "Supabase",
+  "features": [
+    "visual-preview",
+    "draft-publish",
+    "revision-history",
+    "scheduled-content",
+    "media-library",
+    "public-file-uploads",
+    "drag-section-order",
+    "responsive-preview",
+    "hero-framing",
+    "seo-editor"
+  ]
+}
