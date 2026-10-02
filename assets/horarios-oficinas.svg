@@ -1,0 +1,69 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="1500" viewBox="0 0 1200 1500" role="img" aria-labelledby="title desc">
+  <title id="title">Horários das Oficinas</title>
+  <desc id="desc">Horários de Ballet e Futsal do CAIC.</desc>
+  <defs>
+    <linearGradient id="pink" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#ff5ba8"/><stop offset="1" stop-color="#e81579"/></linearGradient>
+    <linearGradient id="blue" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#39a9ef"/><stop offset="1" stop-color="#176aa4"/></linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%"><feDropShadow dx="0" dy="8" stdDeviation="12" flood-color="#082745" flood-opacity=".10"/></filter>
+    <style>
+      .t{font-family:Arial,'Segoe UI',sans-serif;fill:#082745}.head{font-weight:900}.time{font-weight:900}.sub{font-weight:600;fill:#17212b}.small{font-weight:700;fill:#617181}
+      .clockn{font-size:13px;font-weight:700;fill:#17212b}.card{filter:url(#shadow)}
+    </style>
+  </defs>
+  <rect width="1200" height="1500" fill="#f8fbfe"/>
+  <g class="t">
+    <text x="600" y="88" text-anchor="middle" font-size="64" class="head">Horários das Oficinas</text>
+    <text x="600" y="132" text-anchor="middle" font-size="27" class="small">Confira os horários de Ballet e Futsal.</text>
+
+    <g class="card">
+      <rect x="54" y="178" width="1092" height="432" rx="34" fill="#fff"/>
+      <rect x="54" y="178" width="1092" height="118" rx="34" fill="url(#pink)"/>
+      <path d="M54 260h1092v36H54z" fill="url(#pink)"/>
+      <g transform="translate(92 205)" stroke="#fff" stroke-width="7" fill="none" stroke-linecap="round">
+        <path d="M19 5c20 10 34 25 31 42-3 17-19 35-33 50-9 10-24 1-19-12l20-52"/>
+        <path d="M68 5C48 15 34 30 37 47c3 17 19 35 33 50 9 10 24 1 19-12L69 33"/>
+        <path d="M25 8c13 4 24 4 37 0"/>
+      </g>
+      <text x="212" y="255" font-size="64" fill="#fff" class="head">BALLET</text>
+      <g transform="translate(890 196)">
+        <circle cx="76" cy="50" r="30" fill="#ffd7bd"/><path d="M48 42c3-34 56-44 67-7 5 16-1 33-7 44-5 9-13 16-31 16-22 0-34-13-35-31-1-9 1-15 6-22" fill="#7b3d22"/>
+        <circle cx="83" cy="13" r="22" fill="#7b3d22"/><path d="M52 82c8-12 41-11 50 0l15 43H39z" fill="#ff6aa7"/><path d="M29 123h98l-18 36H47z" fill="#ffb5d3"/><path d="M45 92 13 69M111 92l29-26" stroke="#ffd7bd" stroke-width="12" stroke-linecap="round"/>
+      </g>
+      <rect x="82" y="318" width="1036" height="122" rx="24" fill="#fff1f7"/>
+      <rect x="82" y="458" width="1036" height="122" rx="24" fill="#fff1f7"/>
+
+      <g transform="translate(112 329)">
+        <circle cx="50" cy="50" r="47" fill="#fff" stroke="#d5126a" stroke-width="7"/><circle cx="50" cy="50" r="4" fill="#d5126a"/><path d="M50 50 72 25M50 50 84 34" stroke="#d5126a" stroke-width="6" stroke-linecap="round"/>
+        <text x="45" y="16" class="clockn">12</text><text x="76" y="28" class="clockn">1</text><text x="89" y="53" class="clockn">2</text><text x="80" y="83" class="clockn">4</text><text x="43" y="96" class="clockn">6</text><text x="8" y="57" class="clockn">9</text>
+      </g>
+      <line x1="225" y1="334" x2="225" y2="424" stroke="#ef4f9b" stroke-width="4"/>
+      <text x="266" y="370" font-size="42" fill="#c80e60" class="time">Das 13:10h às 14:00h</text><text x="266" y="414" font-size="34" class="sub">1º anos</text>
+
+      <g transform="translate(112 469)">
+        <circle cx="50" cy="50" r="47" fill="#fff" stroke="#d5126a" stroke-width="7"/><circle cx="50" cy="50" r="4" fill="#d5126a"/><path d="M50 50 69 34M50 50 84 34" stroke="#d5126a" stroke-width="6" stroke-linecap="round"/>
+        <text x="45" y="16" class="clockn">12</text><text x="76" y="28" class="clockn">1</text><text x="89" y="53" class="clockn">2</text><text x="80" y="83" class="clockn">4</text><text x="43" y="96" class="clockn">6</text><text x="8" y="57" class="clockn">9</text>
+      </g>
+      <line x1="225" y1="474" x2="225" y2="564" stroke="#ef4f9b" stroke-width="4"/>
+      <text x="266" y="510" font-size="42" fill="#c80e60" class="time">Das 14:10h às 15:00h</text><text x="266" y="554" font-size="34" class="sub">demais anos</text>
+    </g>
+
+    <g class="card">
+      <rect x="54" y="650" width="1092" height="782" rx="34" fill="#fff"/>
+      <rect x="54" y="650" width="1092" height="118" rx="34" fill="url(#blue)"/>
+      <path d="M54 732h1092v36H54z" fill="url(#blue)"/>
+      <g transform="translate(96 677)">
+        <circle cx="46" cy="31" r="30" fill="#fff" stroke="#082745" stroke-width="4"/><path d="M46 12 58 25 53 43 36 43 30 25z" fill="#082745"/><path d="m30 25-16-7M58 25l16-7M53 43l10 14M36 43 27 57" stroke="#082745" stroke-width="4"/>
+      </g>
+      <text x="215" y="728" font-size="64" fill="#fff" class="head">FUTSAL</text>
+      <g transform="translate(900 668)"><circle cx="70" cy="39" r="27" fill="#ffd7bd"/><path d="M43 35c0-25 41-37 56-15 9 13 4 29 1 35-5-14-31-22-57-20z" fill="#6e371f"/><path d="M38 70h64l16 61H24z" fill="#1977bb"/><circle cx="137" cy="121" r="27" fill="#fff" stroke="#082745" stroke-width="4"/><path d="M137 103 148 115 143 131 127 131 122 115z" fill="#082745"/></g>
+
+      <g id="frow1"><rect x="82" y="792" width="1036" height="130" rx="24" fill="#eef8ff"/><g transform="translate(112 807)"><circle cx="50" cy="50" r="47" fill="#fff" stroke="#176aa4" stroke-width="7"/><circle cx="50" cy="50" r="4" fill="#176aa4"/><path d="M50 50 69 27M50 50 84 34" stroke="#176aa4" stroke-width="6" stroke-linecap="round"/><text x="45" y="16" class="clockn">12</text><text x="76" y="28" class="clockn">1</text><text x="89" y="53" class="clockn">2</text><text x="43" y="96" class="clockn">6</text><text x="8" y="57" class="clockn">9</text></g><line x1="225" y1="808" x2="225" y2="908" stroke="#2794d6" stroke-width="4"/><text x="266" y="849" font-size="40" fill="#0f5c98" class="time">Das 13:10h às 14:00h</text><text x="266" y="893" font-size="32" class="sub">meninos de 4º e 5º anos</text></g>
+
+      <g id="frow2"><rect x="82" y="940" width="1036" height="130" rx="24" fill="#eef8ff"/><g transform="translate(112 955)"><circle cx="50" cy="50" r="47" fill="#fff" stroke="#176aa4" stroke-width="7"/><circle cx="50" cy="50" r="4" fill="#176aa4"/><path d="M50 50V16M50 50 77 34" stroke="#176aa4" stroke-width="6" stroke-linecap="round"/><text x="45" y="16" class="clockn">12</text><text x="76" y="28" class="clockn">1</text><text x="89" y="53" class="clockn">2</text><text x="43" y="96" class="clockn">6</text><text x="8" y="57" class="clockn">9</text></g><line x1="225" y1="956" x2="225" y2="1056" stroke="#2794d6" stroke-width="4"/><text x="266" y="997" font-size="40" fill="#0f5c98" class="time">Das 14:00h às 14:50h</text><text x="266" y="1041" font-size="32" class="sub">meninos de 1º anos</text></g>
+
+      <g id="frow3"><rect x="82" y="1088" width="1036" height="130" rx="24" fill="#fff1f7"/><g transform="translate(112 1103)"><circle cx="50" cy="50" r="47" fill="#fff" stroke="#d5126a" stroke-width="7"/><circle cx="50" cy="50" r="4" fill="#d5126a"/><path d="M50 50 80 42M50 50 84 34" stroke="#d5126a" stroke-width="6" stroke-linecap="round"/><text x="45" y="16" class="clockn">12</text><text x="76" y="28" class="clockn">1</text><text x="89" y="53" class="clockn">2</text><text x="43" y="96" class="clockn">6</text><text x="8" y="57" class="clockn">9</text></g><line x1="225" y1="1104" x2="225" y2="1204" stroke="#ef4f9b" stroke-width="4"/><text x="266" y="1145" font-size="40" fill="#c80e60" class="time">Das 15:10h às 16:00h</text><text x="266" y="1189" font-size="32" class="sub">meninas de todos os anos</text></g>
+
+      <g id="frow4"><rect x="82" y="1236" width="1036" height="168" rx="24" fill="#eef8ff"/><g transform="translate(112 1270)"><circle cx="50" cy="50" r="47" fill="#fff" stroke="#176aa4" stroke-width="7"/><circle cx="50" cy="50" r="4" fill="#176aa4"/><path d="M50 50V16M50 50 79 67" stroke="#176aa4" stroke-width="6" stroke-linecap="round"/><text x="45" y="16" class="clockn">12</text><text x="76" y="28" class="clockn">1</text><text x="89" y="53" class="clockn">2</text><text x="43" y="96" class="clockn">6</text><text x="8" y="57" class="clockn">9</text></g><line x1="225" y1="1252" x2="225" y2="1388" stroke="#2794d6" stroke-width="4"/><text x="266" y="1300" font-size="40" fill="#0f5c98" class="time">Das 16:00h às 16:50h</text><text x="266" y="1348" font-size="32" class="sub">meninos de 2º e 3º anos</text></g>
+    </g>
+  </g>
+</svg>
